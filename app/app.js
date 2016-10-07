@@ -6,7 +6,8 @@
             'ui.router',
             'ngCookies',
             'ui.bootstrap',
-            'toastr'
+            'toastr',
+            'dataGrid', 'pagination', 'ngMaterial'
         ])
         .config(router);
 
@@ -55,6 +56,13 @@
                 url             : 'dashboard',  
                 templateUrl     : 'app/components/dashboard/dashboard.html',
                 controller      : 'DashboardCtrl',
+                controllerAs    : 'vm'
+            })
+
+            .state('app.material', {
+                url             : 'material',  
+                templateUrl     : 'app/components/material/index.html',
+                controller      : 'myAppController',
                 controllerAs    : 'vm'
             })
 
