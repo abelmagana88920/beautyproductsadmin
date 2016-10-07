@@ -1,0 +1,29 @@
+{
+  "name": "angular-admin-panel",
+  "homepage": "https://github.com/jettcalleja/cdi-angular-spa",
+  "authors": [
+    "\"\""
+  ],
+  "description": "Admin panel boilerplate using Angular 1",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "cdi"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.8",
+    "angular-ui-router": "~0.3.1",
+    "angular-cookies": "~1.5.8",
+    "angular-bootstrap": "~2.1.3",
+    "angular-toastr": "^2.1.1"
+  }
+}

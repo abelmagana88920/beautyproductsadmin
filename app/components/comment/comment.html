@@ -1,0 +1,32 @@
+<h3 class="title-header">{{vm.titleHeader}}</h3>
+<div class="col-md-12">
+    Hello World!
+
+<div class="blue">
+    <p class="text-white">Hello World!</p>
+</div>
+    <button class="btn btn-primary"
+    		ng-click="vm.message_modal()">
+    	Modal
+    </button>
+    <div class="table-responsive">
+    	<table class="table table-bordered">
+    		<thead>
+    			<tr>
+    				<th>ID</th>
+    				<th>Name</th>
+    				<th>Email</th>
+    				<th>Body</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr ng-repeat = "comment in vm.data">
+    				<td ng-bind="comment.id"></td>
+    				<td ng-bind="comment.name"></td>
+    				<td ng-bind="comment.email"></td>
+    				<td ng-bind="comment.body"></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+</div>

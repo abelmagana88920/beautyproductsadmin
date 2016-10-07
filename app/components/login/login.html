@@ -1,0 +1,56 @@
+<div class="wrapper">
+    <p  class="text-uppercase lead" 
+        align="center">
+        {{ vm.header }}
+    </p>    
+    <form class="form-signin"
+          align="left"
+          ng-submit="vm.login(user)"
+          name="formlogin"> 
+    <div class="" align="center">
+        <div class="white-text" >
+            <i class="fa fa-user  fa-4x"  ></i>
+        </div>                      
+    </div>    
+    <br> 
+    <div class="col-md-12">
+        <input  class="form-control" 
+                type="text"
+                name="userEmail"
+                ng-model="user.email" 
+                required=""
+                ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" >
+         <span   class="text-danger small"
+                ng-if="formlogin.userEmail.$error.pattern == true">
+            Invalid email                       
+        </span>
+        <label class="md-label">Email</label>
+    </div>
+    <div class="col-md-12">
+        <input  class="form-control" 
+                type="password"
+                ng-disabled="isPassword" 
+                ng-model="user.password" 
+                required="">
+        <label >Password</label>
+    </div>
+        <button class="btn btn-block btn-lg btn-primary text-uppercase" 
+                ng-disabled="disable">
+                <span ng-if="disable">                                  
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                     {{ vm.loading }}
+                </span>
+                <span ng-if="!vm.disable">{{ vm.log }}</span>
+        </button>
+    </form>
+    <br>
+
+    <div class="" align="center">
+        <a  class="teal-text" 
+            ng-click = "vm.forgot()" >
+            Forgot Password
+        </a>
+    </div>
+
+
+</div>
