@@ -14,15 +14,15 @@
         }
         
         /* Hide table headers (but not display: none;, for accessibility) */
-        thead tr { 
+        table.responsive thead tr { 
             position: absolute;
             top: -9999px;
             left: -9999px;
         }
         
-        tr { border: 1px solid #ccc; }
+        table.responsive tr { border: 1px solid #ccc; }
         
-        td { 
+        table.responsive td { 
             /* Behave  like a "row" */
             border: none;
             border-bottom: 1px solid #eee; 
@@ -30,7 +30,7 @@
             padding-left: 50%; 
         }
         
-        td:before { 
+        table.responsive td:before { 
             /* Now like a table header */
             position: absolute;
             /* Top/left values mimic padding */
@@ -49,10 +49,10 @@
         /*
         Label the data
         */
-        td:nth-of-type(1):before { content: "Id"; }
-        td:nth-of-type(2):before { content: "Name"; }
-        td:nth-of-type(3):before { content: "Username"; }
-        td:nth-of-type(4):before { content: "Company"; }
+        table.responsive td:nth-of-type(1):before { content: "Id"; }
+        table.responsive td:nth-of-type(2):before { content: "Name"; }
+        table.responsive td:nth-of-type(3):before { content: "Username"; }
+        table.responsive td:nth-of-type(4):before { content: "Company"; }
         
     }
     
@@ -87,7 +87,7 @@
     	Modal
     </button>
     <div class="table-responsive">
-    	<table class="table table-bordered">
+    	<table class="responsive table table-bordered">
     		<thead>
     			<tr>
     				<th>ID</th>

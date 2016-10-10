@@ -353,8 +353,8 @@ table.responsive {
     
 
     @media(max-width: 767px){ 
-        table.responsive .table>thead>tr>th, table.responsive .table>tbody>tr>th, table.responsive .table>tfoot>tr>th, table.responsive .table>thead>tr>td, table.responsive .table>tbody>tr>td, table.responsive .table>tfoot>tr>td {
-            padding-left: 150px;
+        .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+       padding-left: 150px;
         }
         .table-responsive {
             border:0;
@@ -369,10 +369,12 @@ table.responsive {
         }
     }
 
+
+
  
-       .pagination>li>a, .pagination>li>span {
+    .pagination>li>a, .pagination>li>span {
            padding: 0px 6px;
-        }
+    }
 
     md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
         background-color: #01A3D4;
