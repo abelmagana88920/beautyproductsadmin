@@ -368,6 +368,12 @@ table {
             padding-bottom: 4px;
         }
     }
+
+
+       .pagination>li>a, .pagination>li>span {
+           padding: 0px 6px;
+        }
+
     
 
 
