@@ -78,7 +78,7 @@
 <div layout="column" layout-fill>
     <md-toolbar layout="row" layout-align="center">
         <div class="md-toolbar-tools" flex-gt-md="60" flex-md="80" flex-sm="100">
-            <span>Angular Data Grid &mdash; Material Design</span>
+            <span>Beauty Product</span>
             <span flex></span>
             <md-menu md-position-mode="target-right target">
                 <md-button ng-click="$mdOpenMenu($event)">
@@ -98,13 +98,20 @@
             </md-menu>
         </div>
     </md-toolbar>
+
+   
+
     <md-content layout-padding layout="row" layout-align="center">
         <div flex-gt-md="60" flex-md="80" flex-xs="100">
              
             <hr>
+            <button class="btn btn-primary"
+            ng-click="vm.message_modal()">
+        Modal
+    </button>
             <div layout-gt-xs="row" layout-xs="column" layout-align="stretch center">
                 <div  layout="row" layout-align="center start">
-                    <md-input-container md-no-float md-is-error="false" class="md-block flex-gt-xs flex-xs md-input-focused">
+                    <md-input-container md-no-float md-is-error="false" class="md-block flex-gt-xs flex-xs">
                         <input ng-model="code"
                                class="md-input"
                                ng-change="gridActions.filter()"
@@ -188,6 +195,10 @@
                             <th sortable='total.value' class="sortable">
                                 <span>Total</span>
                             </th>
+
+                             <th colspan=2>
+                                <span>Action</span>
+                            </th>
                         
                           
                             </th>
@@ -201,7 +212,8 @@
                             <td ng-bind="item.statusDisplay"></td>
                             <td ng-bind="item.placed | date:'MM/dd/yyyy'"></td>
                             <td ng-bind="item.total.formattedValue"></td>
-                           
+                            <td align=center ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                            <td align=center><i class="fa fa-times" aria-hidden="true"></i> </td>
                         </tr>
                         </tbody>
                     </table>
