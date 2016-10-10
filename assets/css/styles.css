@@ -374,6 +374,33 @@ table.responsive {
            padding: 0px 6px;
         }
 
+    md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+        background-color: #01A3D4;
+    }
+
+
+    md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused .md-input, md-input-container:not(.md-input-invalid).md-input-focused .md-input,
     
+     .md-default-theme .md-datepicker-input-container.md-datepicker-focused,
+   .md-datepicker-input-container.md-datepicker-focused,
+
+    md-select.md-default-theme:not([disabled]):focus .md-select-value,
+    md-select:not([disabled]):focus .md-select-value
+    {
+        border-bottom-color:#01A3D4;
+
+    }
+
+    md-select.md-default-theme:not([disabled]):focus .md-select-value,
+    md-select:not([disabled]):focus .md-select-value,
+
+    md-select.md-default-theme .md-select-value.md-select-placeholder,
+    md-select .md-select-value.md-select-placeholder
+     {
+        color:white;
+    }
+
+
+  
 
 
