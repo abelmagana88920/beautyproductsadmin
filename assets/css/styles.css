@@ -327,24 +327,24 @@ a {
     }
 }
 
-
-table { 
+ 
+table.responsive { 
         width: 100%; 
         border-collapse: collapse; 
         margin-top:10px;
         border:0px;
 
     }
-    /* Zebra striping */
-    tr:nth-of-type(odd) { 
+    
+  table.responsive  tr:nth-of-type(odd) { 
         background: #eee; 
     }
-    th { 
+   table.responsive th { 
         background: #333; 
         color: white; 
         font-weight: bold; 
     }
-    td, th { 
+   table.responsive td, th { 
         padding: 6px; 
         border: 0.0000000001px solid #ccc; 
         text-align: left; 
@@ -353,7 +353,7 @@ table {
     
 
     @media(max-width: 767px){ 
-        .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+        table.responsive .table>thead>tr>th, table.responsive .table>tbody>tr>th, table.responsive .table>tfoot>tr>th, table.responsive .table>thead>tr>td, table.responsive .table>tbody>tr>td, table.responsive .table>tfoot>tr>td {
             padding-left: 150px;
         }
         .table-responsive {
@@ -369,7 +369,7 @@ table {
         }
     }
 
-
+ 
        .pagination>li>a, .pagination>li>span {
            padding: 0px 6px;
         }

@@ -1,3 +1,4 @@
+
 <style>
     /* 
     Max width before this PARTICULAR table gets nasty
@@ -9,20 +10,20 @@
     (min-device-width: 768px) and (max-device-width: 1024px)  {
     
         /* Force table to not be like tables anymore */
-        table, thead, tbody, th, td, tr { 
+        table.responsive, table.responsive thead,table.responsive  tbody,table.responsive th,table.responsive td,table.responsive tr { 
             display: block; 
         }
         
         /* Hide table headers (but not display: none;, for accessibility) */
-        thead tr { 
+        table.responsive thead tr { 
             position: absolute;
             top: -9999px;
             left: -9999px;
         }
         
-        tr { border: 1px solid #ccc; }
+        table.responsive tr { border: 1px solid #ccc; }
         
-        td { 
+        table.responsive td { 
             /* Behave  like a "row" */
             border: none;
             border-bottom: 1px solid #eee; 
@@ -30,7 +31,7 @@
             padding-left: 50%; 
         }
         
-        td:before { 
+        table.responsive td:before { 
             /* Now like a table header */
             position: absolute;
             /* Top/left values mimic padding */
@@ -49,10 +50,10 @@
         /*
         Label the data
         */
-        td:nth-of-type(1):before { content: "Order"; }
-        td:nth-of-type(2):before { content: "Status"; }
-        td:nth-of-type(3):before { content: "Date Placed"; }
-        td:nth-of-type(4):before { content: "Total"; }
+        table.responsive td:nth-of-type(1):before { content: "Order"; }
+        table.responsive td:nth-of-type(2):before { content: "Status"; }
+        table.responsive td:nth-of-type(3):before { content: "Date Placed"; }
+        table.responsive td:nth-of-type(4):before { content: "Total"; }
         
     }
     
@@ -162,7 +163,7 @@
                     </div>
                 </div>
                 <div>
-                    <table >
+                    <table class="responsive">
                         <thead>
                         <tr>
                             <th sortable="code" class="sortable mdl-data-table__cell--non-numeric">
@@ -187,6 +188,9 @@
                             <th sortable='total.value' class="sortable">
                                 <span>Total</span>
                             </th>
+                        
+                          
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -197,6 +201,7 @@
                             <td ng-bind="item.statusDisplay"></td>
                             <td ng-bind="item.placed | date:'MM/dd/yyyy'"></td>
                             <td ng-bind="item.total.formattedValue"></td>
+                           
                         </tr>
                         </tbody>
                     </table>
