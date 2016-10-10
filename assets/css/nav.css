@@ -105,7 +105,7 @@
 }
 @media(max-width: 767px) {
     .side-nav {
-        margin-top: 18px;
+        margin-top: -9px;
         padding: 0 10px;
     }
     .collapse-btn{
