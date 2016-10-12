@@ -16,7 +16,6 @@
                     <p>Reverse: {{reverse}}</p>
                     <p>Search String : {{search}}</p>
     </div> -->
-    
 
     <div class="table-responsive">
         <div sticky offset="55" class="sticky">
@@ -32,29 +31,18 @@
     		<thead >
                 <div sticky offset=100>
     			<tr >
-    				<th ng-click="sort('id')" style="width:100px">
-                        ID  
-                       <span ng-show="sortKey == 'id' && !reverse" class="fa fa-caret-down"></span>
-                       <span ng-show="sortKey == 'id' && reverse" class="fa fa-caret-up"></span>
+                     <th style="width:100px" ng-click="sort('id')">
+                        <u-sort-page-directive sort-key="{{sortKey}}" label="ID" value="id"  ></u-sort-page-directive>
                     </th>
-    				<th ng-click="sort('name')" style="width:100px">
-                        Name 
-                       <span ng-show="sortKey == 'name' && !reverse" class="fa fa-caret-down"></span>
-                       <span ng-show="sortKey == 'name' && reverse" class="fa fa-caret-up"></span>
+                     <th ng-click="sort('name')">
+                        <u-sort-page-directive sort-key="{{sortKey}}" label="Name" value="name"  ></u-sort-page-directive>
                     </th>
-                    <th ng-click="sort('email')" style="width:100px">
-                        Email
-                       <span ng-show="sortKey == 'email' && !reverse" class="fa fa-caret-down"></span>
-                       <span ng-show="sortKey == 'email' && reverse" class="fa fa-caret-up"></span>
+                     <th ng-click="sort('email')">
+                        <u-sort-page-directive sort-key="{{sortKey}}" label="Email" value="email"  ></u-sort-page-directive>
                     </th>
-                     <th ng-click="sort('body')" style="width:100px">
-                        Body 
-                       <span ng-show="sortKey == 'body' && !reverse" class="fa fa-caret-down"></span>
-                       <span ng-show="sortKey == 'body' && reverse" class="fa fa-caret-up"></span>
+                     <th ng-click="sort('body')">
+                        <u-sort-page-directive sort-key="{{sortKey}}" label="Body" value="body"  ></u-sort-page-directive>
                     </th>
-                  
-
-    				 
     			</tr>
                 </div>
     		</thead>

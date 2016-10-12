@@ -5,9 +5,9 @@
         .module('app')
         .controller('DashboardCtrl', DashboardCtrl);
 
-    DashboardCtrl.$inject = ['$scope', '$state','ModalService', 'QueryService','PagerService','logger'];
+    DashboardCtrl.$inject = ['$scope', '$state','ModalService', 'QueryService','logger'];
 
-    function DashboardCtrl ($scope, $state, ModalService, QueryService,PagerService,logger) {
+    function DashboardCtrl ($scope, $state, ModalService, QueryService,logger) {
         var vm = this;
         
         vm.titleHeader = 'Dashboard';

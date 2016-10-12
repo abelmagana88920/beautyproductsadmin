@@ -5,9 +5,9 @@
         .module('app')
         .controller('CommentCtrl', CommentCtrl);
 
-    CommentCtrl.$inject = ['$scope', '$state','ModalService', 'QueryService','PagerService','logger'];
+    CommentCtrl.$inject = ['$scope', '$state','ModalService', 'QueryService','logger'];
 
-    function CommentCtrl($scope, $state, ModalService, QueryService,PagerService,logger) {
+    function CommentCtrl($scope, $state, ModalService, QueryService,logger) {
         var vm = this;
         
         vm.titleHeader = 'Comment';

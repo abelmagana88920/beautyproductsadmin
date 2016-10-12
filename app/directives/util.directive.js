@@ -3,35 +3,26 @@
 
     angular
         .module('app')
-        .directive('exampleDirective', exampleDirective);
-
-    function exampleDirective () {
-        return {
+        .directive('uSortPageDirective', uSortPageDirective);
+ 
+        function uSortPageDirective() {
+                return {
                         restrict: 'E',
                         transclude: true,
                         templateUrl: 'app/directives/dir_view/uSortPageDirective.html',
                         scope: {
-                             productObject: '=',
-                             numberObject: '=',
-                             index: '@',
-                             parent: '@',
-                             wowValue: '@',
-                             sizeGrid: '@',
-                             menuCategory: '=',
-                             modalDisplay: '@',
-                             totalCart: '@'
+                             sortKey: '@',
+                             label: '@',
+                             value: '@'
                         },
                         controller: function ($scope) { 
-
+                              
                         
                         },
                        
                         link: function($scope, element, attrs) {
                                        
                         }
-        };
-    }
-
-
-
+                };
+        }
 })();
