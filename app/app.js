@@ -9,7 +9,8 @@
             'toastr',
             'dataGrid', 'pagination', 'ngMaterial',
             'sticky',
-            'tableSort'
+            //'tableSort',
+            'angularUtils.directives.dirPagination'
             //'hl.sticky'
         ])
         .config(router);

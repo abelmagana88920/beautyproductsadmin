@@ -14,45 +14,19 @@
         vm.message_modal = message_modal;
         vm.data = {};
 
+
          vm.pager = {};
-        vm.setPage = setPage;
-
-        function initController() {
-            // initialize to page 1
-            vm.setPage(1);
+      
+         function initController() {
+              vm.data_final = {};
+              vm.data_final =vm.data; //reassign data because it is empty
         }
 
-        function setPage(page) {
-            if (page < 1 || page > vm.pager.totalPages) {
-                return;
-            }
-            // get pager object from service
-            vm.pager = PagerService.GetPager(vm.data.length, page);
-            // get current page of items
-            vm.items = vm.data.slice(vm.pager.startIndex, vm.pager.endIndex + 1);
+        $scope.sort = function(keyname){
+            $scope.sortKey = keyname;   //set the sortKey to the param passed
+            $scope.reverse = !$scope.reverse; //if true make it false and vice versa
         }
-
-        $scope.orderProperty = "+f";
-        $scope.sortProperty = function(column) {
-            var currentColumn = $scope.orderProperty.slice(1);
-            var currentDirection = $scope.orderProperty.slice(0, 1);
-            var dir = '+';
- 
-            if (column === currentColumn) {
-                dir = currentDirection === '+' ? '-' : '+';
-            }
-
-            $scope.orderProperty = dir + column;
-
-            if (dir == '-') {
-                vm.pager = PagerService.GetPager(vm.data.length, vm.pager.totalPages);
-                vm.items = vm.data.slice(vm.pager.startIndex, vm.pager.endIndex + 1);
-            } else {
-                vm.pager = PagerService.GetPager(vm.data.length, 1);        
-                vm.items = vm.data.slice(vm.pager.startIndex, vm.pager.endIndex + 1);
-            }
-            
-        };
+        
         
         function message_modal () {
             var content =  {
