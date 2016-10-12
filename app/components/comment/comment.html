@@ -1,3 +1,4 @@
+
 <h3 class="title-header">{{vm.titleHeader}}</h3>
 <div class="col-md-12">
     Hello World!
@@ -9,18 +10,47 @@
     		ng-click="vm.message_modal()">
     	Modal
     </button>
+
+     
+    
+
     <div class="table-responsive">
-    	<table class="table table-bordered">
-    		<thead>
-    			<tr>
-    				<th>ID</th>
+        <div sticky offset="55" class="sticky">
+         <!-- pager -->
+        <div style="float:left; display:inline-block"><label>Any: <input ng-model="search.$"></label></div>
+        <div style="clear:all"><ul  ng-if="vm.pager.pages.length" class="pagination">
+                <li ng-class="{
+                isabled:vm.pager.currentPage === 1}">
+                    <a ng-click="vm.setPage(1)">First</a>
+                </li>
+                <li ng-class="{disabled:vm.pager.currentPage === 1}">
+                    <a ng-click="vm.setPage(vm.pager.currentPage - 1)">Previous</a>
+                </li>
+                <li ng-repeat="page in vm.pager.pages" ng-class="{active:vm.pager.currentPage === page}">
+                    <a ng-click="vm.setPage(page)">{{page}}</a>
+                </li>                
+                <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
+                    <a ng-click="vm.setPage(vm.pager.currentPage + 1)">Next</a>
+                </li>
+                <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
+                    <a ng-click="vm.setPage(vm.pager.totalPages)">Last</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    	<table class="table table-bordered responsive">
+    		<thead >
+                <div sticky offset=100>
+    			<tr >
+    				<th ><a ng-click="sortProperty('id')">ID</a></th>
     				<th>Name</th>
     				<th>Email</th>
     				<th>Body</th>
     			</tr>
+                </div>
     		</thead>
     		<tbody>
-    			<tr ng-repeat = "comment in vm.data">
+    			<tr ng-repeat = "comment in vm.items  | orderBy:orderProperty | filter:search:strict" >
     				<td ng-bind="comment.id"></td>
     				<td ng-bind="comment.name"></td>
     				<td ng-bind="comment.email"></td>

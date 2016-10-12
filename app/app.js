@@ -7,7 +7,10 @@
             'ngCookies',
             'ui.bootstrap',
             'toastr',
-            'dataGrid', 'pagination', 'ngMaterial'
+            'dataGrid', 'pagination', 'ngMaterial',
+            'sticky',
+            'tableSort'
+            //'hl.sticky'
         ])
         .config(router);
 
