@@ -19,15 +19,20 @@
 
     <div class="table-responsive">
 
-        <div sticky offset="35" class="sticky" style="background-color:white">
-            <table>
+        <div sticky offset="43" class="sticky" style="background-color:white">
+            <table style="width:100%">
                 <tr>
-                    <td colspan=2><h3 class="title-header">{{vm.titleHeader}}</h3></td>
+                    <td><h3 class="title-header">{{vm.titleHeader}}</h3></td>
+                    <td valign=middle align=right><i class="fa fa-2x fa-cog" aria-hidden="true"></i></td> 
 
                </tr>   
                <tr>
-                    <td><label>Any: <input ng-model="search.$"></label></td>
-                    <td><dir-pagination-controls
+                    <td>
+                        <label>Any: 
+                             <input class="form-control"  type="text" ng-model="search.$" required>
+                        </label>
+                    </td>
+                    <td align=right><dir-pagination-controls
                         max-size="10"
                         direction-links="true"
                         boundary-links="true" >
@@ -46,6 +51,12 @@
                         boundary-links="true" >
             </dir-pagination-controls> -->
         </div>
+
+             
+               
+        
+          
+       
 
         <!--desktop-->
     	<table class="table table-bordered layout-table desktop">
