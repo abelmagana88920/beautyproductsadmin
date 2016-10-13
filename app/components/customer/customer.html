@@ -1,7 +1,6 @@
-
-<h3 class="title-header">{{vm.titleHeader}}</h3>
 <div class=""> <!-- col-md-12-->
-    Hello World!
+    
+   <!-- Hello World!
 
 <div class="shufra-blue-primary">
     <p class="text-white">Hello World!</p>
@@ -9,7 +8,7 @@
     <button class="btn btn-primary"
     		ng-click="vm.message_modal()">
     	Modal {{orderProperty}}
-    </button>
+    </button> -->
     <!--
     <div class="alert alert-info">
                     <p>Sort key: {{sortKey}}</p>
@@ -17,16 +16,38 @@
                     <p>Search String : {{search}}</p>
     </div>  -->
 
+
     <div class="table-responsive">
-        <div sticky offset="55" class="sticky">
-         <!-- pager -->
-        <div style="float:left; display:inline-block"><label>Any: <input ng-model="search.$"></label></div>
-        <dir-pagination-controls
-                    max-size="10"
-                    direction-links="true"
-                    boundary-links="true" >
-        </dir-pagination-controls>
+
+        <div sticky offset="35" class="sticky" style="background-color:white">
+            <table>
+                <tr>
+                    <td colspan=2><h3 class="title-header">{{vm.titleHeader}}</h3></td>
+
+               </tr>   
+               <tr>
+                    <td><label>Any: <input ng-model="search.$"></label></td>
+                    <td><dir-pagination-controls
+                        max-size="10"
+                        direction-links="true"
+                        boundary-links="true" >
+                         </dir-pagination-controls> </td>
+               </tr> 
+            </table>
+                
+     
+             <!--
+            <div><h3 class="title-header">{{vm.titleHeader}}</h3></div>
+             
+            <div ><label>Any: <input ng-model="search.$"></label></div>
+            <dir-pagination-controls
+                        max-size="10"
+                        direction-links="true"
+                        boundary-links="true" >
+            </dir-pagination-controls> -->
         </div>
+
+        <!--desktop-->
     	<table class="table table-bordered layout-table desktop">
     		<thead >
                 <div sticky offset=100>
@@ -49,7 +70,7 @@
     		</tbody>
     	</table>
 
-
+        <!--mobile-->
         <table class="table table-bordered layout-table mobile">
             <thead >
                 <div sticky offset=100>

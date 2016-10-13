@@ -288,7 +288,7 @@ a {
     margin-left:15px;
 }
 .content-view {
-    margin-top:13px;
+    margin-top:-62px;
     padding: 10px;
 }
 #wrapper {
@@ -315,8 +315,8 @@ a {
     left: 0;
 }
 .title-header{
-    position: absolute;
-    top: 30px;
+    /* position: absolute; */
+    top: 23px;
     color: rgba(0,0,0,0.40);
     left: 3px;
 }
@@ -342,6 +342,9 @@ a {
     .desktop {
         display:none;
     }
+    .title-header {
+        top:2px;
+    }
 
     .content-wrapper{
         margin-top: -31px;
@@ -351,6 +354,7 @@ a {
 
     .content-view {
      padding: 0px;
+     margin-top:-70px;
     }
 
     .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
@@ -437,7 +441,8 @@ a {
     }
 
     .sticky {
-        margin:10px;
+        margin:0px;
+        box-shadow: 0 4px 2px -2px gray;
     }
 
     md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
