@@ -10,12 +10,12 @@
     		ng-click="vm.message_modal()">
     	Modal {{orderProperty}}
     </button>
-
-    <!--<div class="alert alert-info">
+    <!--
+    <div class="alert alert-info">
                     <p>Sort key: {{sortKey}}</p>
                     <p>Reverse: {{reverse}}</p>
                     <p>Search String : {{search}}</p>
-    </div> -->
+    </div>  -->
 
     <div class="table-responsive">
         <div sticky offset="55" class="sticky">
@@ -31,28 +31,20 @@
     		<thead >
                 <div sticky offset=100>
     			<tr >
-                     <th style="width:100px" ng-click="sort('id')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" label="ID" value="id"  ></u-sort-page-directive>
-                      
+                     <th style="width:50px" ng-click="sort('id')">
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="ID" value="id"  ></u-sort-page-directive>
                     </th>
-                     <th ng-click="sort('name')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" label="Name" value="name"  ></u-sort-page-directive>
+                     <th ng-click="sort('fullName')">
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
                     </th>
-                     <th ng-click="sort('email')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" label="Email" value="email"  ></u-sort-page-directive>
-                    </th>
-                     <th ng-click="sort('body')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" label="Body" value="body"  ></u-sort-page-directive>
-                    </th>
+                   
     			</tr>
                 </div>
     		</thead>
     		<tbody>
-    			<tr dir-paginate="datas in vm.data_final|orderBy:sortKey:reverse|filter:search|itemsPerPage:10"  >
+    			<tr dir-paginate="datas in vm.data_final|filter:getFullName|orderBy:sortKey:reverse|filter:search|itemsPerPage:10"  >
     				<td ng-bind="datas.id"></td>
-    				<td ng-bind="datas.name"></td>
-    				<td ng-bind="datas.email"></td>
-    				<td ng-bind="datas.body"></td>
+                      <td ng-bind="datas.fullName"></td>
     			</tr>
     		</tbody>
     	</table>

@@ -56,6 +56,13 @@
                 controllerAs    : 'vm'
             })
 
+            .state('app.customer', {
+                url             : 'customer',  
+                templateUrl     : 'app/components/customer/customer.html',
+                controller      : 'CustomerCtrl',
+                controllerAs    : 'vm'
+            })
+
             .state('app.account', {
                 url             : 'dashboard',  
                 templateUrl     : 'app/components/dashboard/dashboard.html',
