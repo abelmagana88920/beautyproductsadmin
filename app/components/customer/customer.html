@@ -1,6 +1,6 @@
 
 <h3 class="title-header">{{vm.titleHeader}}</h3>
-<div class="col-md-12">
+<div class=""> <!-- col-md-12-->
     Hello World!
 
 <div class="shufra-blue-primary">
@@ -27,7 +27,7 @@
                     boundary-links="true" >
         </dir-pagination-controls>
         </div>
-    	<table class="table table-bordered responsive">
+    	<table class="table table-bordered layout-table desktop">
     		<thead >
                 <div sticky offset=100>
     			<tr >
@@ -48,6 +48,25 @@
     			</tr>
     		</tbody>
     	</table>
+
+
+        <table class="table table-bordered layout-table mobile">
+            <thead >
+                <div sticky offset=100>
+                <tr >
+                     <th style="width:50px" ng-click="sort('id')">
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="ID" value="id"  ></u-sort-page-directive>
+                    </th>
+                </tr>
+                </div>
+            </thead>
+            <tbody>
+                <tr dir-paginate="datas in vm.data_final|filter:getFullName|orderBy:sortKey:reverse|filter:search|itemsPerPage:10"  >
+                    <td ng-bind="datas.id"></td>
+                      
+                </tr>
+            </tbody>
+        </table>
 
         <dir-pagination-controls
                     max-size="10"

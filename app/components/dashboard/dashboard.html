@@ -1,4 +1,4 @@
-<style>
+<!--<style>
     /* 
     Max width before this PARTICULAR table gets nasty
     This query will take effect for any screen smaller than 760px
@@ -8,6 +8,7 @@
     only screen and (max-width: 760px),
     (min-device-width: 768px) and (max-device-width: 1024px)  {
     
+
         /* Force table to not be like tables anymore */
         table, thead, tbody, th, td, tr { 
             display: block; 
@@ -27,7 +28,7 @@
             border: none;
             border-bottom: 1px solid #eee; 
             position: relative;
-            padding-left: 50%; 
+            
         }
         
         td:before { 
@@ -36,7 +37,7 @@
             /* Top/left values mimic padding */
            
             left: 6px;
-            width: 15%; 
+            width: 35%; 
              
             padding-right: 10px; 
             white-space: nowrap;
@@ -49,34 +50,28 @@
         /*
         Label the data
         */
+       
         td:nth-of-type(1):before { content: "Id"; }
         td:nth-of-type(2):before { content: "Name"; }
         td:nth-of-type(3):before { content: "Username"; }
-        td:nth-of-type(4):before { content: "Company"; }
+        td:nth-of-type(4):before { content: "Company"; } 
+
+        
+
+        /*td:nth-of-type(3),
+        td:nth-of-type(4) {
+           display:none;
+        } */
         
     }
     
-    /* Smartphones (portrait and landscape) ----------- */
-    @media only screen
-    and (min-device-width : 320px)
-    and (max-device-width : 480px) {
-        body { 
-            padding: 0; 
-            margin: 0; 
-            width: 320px; }
-        }
+
+   
     
-    /* iPads (portrait and landscape) ----------- */
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-        body { 
-            width: 495px; 
-        }
-    }
-    
-</style>
+</style> -->
 
 <h3 class="title-header">{{vm.titleHeader}}</h3>
-<div class="col-md-12">
+<div class="">
     Hello World!
 
 <div class="shufra-blue-primary">
@@ -88,27 +83,8 @@
     </button>
     <div class="table-responsive"> 
 
-         <!-- pager -->
-            <ul ng-if="vm.pager.pages.length" class="pagination">
-                <li ng-class="{disabled:vm.pager.currentPage === 1}">
-                    <a ng-click="vm.setPage(1)">First</a>
-                </li>
-                <li ng-class="{disabled:vm.pager.currentPage === 1}">
-                    <a ng-click="vm.setPage(vm.pager.currentPage - 1)">Previous</a>
-                </li>
-                <li ng-repeat="page in vm.pager.pages" ng-class="{active:vm.pager.currentPage === page}">
-                    <a ng-click="vm.setPage(page)">{{page}}</a>
-                </li>                
-                <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
-                    <a ng-click="vm.setPage(vm.pager.currentPage + 1)">Next</a>
-                </li>
-                <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
-                    <a ng-click="vm.setPage(vm.pager.totalPages)">Last</a>
-                </li>
-            </ul>
 
-
-    	<table class="table table-bordered responsive">
+    	<table class="table table-bordered  layout-table desktop" >
     		<thead>
     			<tr>
     				<th>ID</th>
@@ -126,24 +102,21 @@
     			</tr>
     		</tbody>
     	</table>
-        <!-- pager -->
-            <ul ng-if="vm.pager.pages.length" class="pagination">
-                <li ng-class="{disabled:vm.pager.currentPage === 1}">
-                    <a ng-click="vm.setPage(1)">First</a>
-                </li>
-                <li ng-class="{disabled:vm.pager.currentPage === 1}">
-                    <a ng-click="vm.setPage(vm.pager.currentPage - 1)">Previous</a>
-                </li>
-                <li ng-repeat="page in vm.pager.pages" ng-class="{active:vm.pager.currentPage === page}">
-                    <a ng-click="vm.setPage(page)">{{page}}</a>
-                </li>                
-                <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
-                    <a ng-click="vm.setPage(vm.pager.currentPage + 1)">Next</a>
-                </li>
-                <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
-                    <a ng-click="vm.setPage(vm.pager.totalPages)">Last</a>
-                </li>
-            </ul>
+
+
+        <table class="table table-bordered layout-table mobile" >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat = "user in vm.data">
+                    <td ng-bind="user.id"></td>
+                </tr>
+            </tbody>
+        </table>
+    
     </div>
 </div>
 

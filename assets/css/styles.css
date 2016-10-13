@@ -285,8 +285,10 @@ a {
     margin: 20px 0;
     color: #727272;
     position: relative;
+    margin-left:15px;
 }
 .content-view {
+    margin-top:13px;
     padding: 10px;
 }
 #wrapper {
@@ -316,7 +318,7 @@ a {
     position: absolute;
     top: 30px;
     color: rgba(0,0,0,0.40);
-    left: 23px;
+    left: 3px;
 }
 @media(min-width:768px) {
     .page-wrapper {
@@ -325,16 +327,41 @@ a {
     .footer {
         display:none;
     }
+
+    .mobile {
+        display:none;
+    }
+    .desktop {
+        display:table;
+    }
 }
 @media(max-width: 767px){
+    .mobile {
+        display:table
+    }
+    .desktop {
+        display:none;
+    }
+
     .content-wrapper{
         margin-top: -31px;
-        padding: 20px;
+        padding: 6px;
+        margin-left:15px;
+    }
+
+    .content-view {
+     padding: 0px;
     }
 
     .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
-       padding-left: 150px;
-        }
+       /*padding-left: 55%;  */
+        padding-right: 20px; 
+    }
+
+    .layout-responsive>thead>tr>th, .layout-responsive>tbody>tr>th, .layout-responsive>tfoot>tr>th, .layout-responsive>thead>tr>td, .layout-responsive>tbody>tr>td, .layout-responsive>tfoot>tr>td {
+         padding-left: 55%;   
+    }
+
         .table-responsive {
             border:0;
         }
@@ -372,7 +399,7 @@ a {
 }
 
  
-table.responsive { 
+  table.layout-table { 
         width: 100%; 
         border-collapse: collapse; 
         margin-top:0px;
@@ -380,15 +407,15 @@ table.responsive {
 
     }
     
-  table.responsive  tr:nth-of-type(odd) { 
+  table.layout-table  tr:nth-of-type(odd) { 
         background: #eee; 
     }
-   table.responsive th { 
+   table.layout-table th { 
         background: #333; 
         color: white; 
         font-weight: bold; 
     }
-   table.responsive td, th { 
+   table.layout-table td, th { 
         padding: 6px; 
         border: 0.0000000001px solid #ccc; 
         text-align: left; 

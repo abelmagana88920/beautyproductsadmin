@@ -1,6 +1,6 @@
 
 <h3 class="title-header">{{vm.titleHeader}}</h3>
-<div class="col-md-12">
+<div class="">
     Hello World!
 
 <div class="shufra-blue-primary">
@@ -27,22 +27,22 @@
                     boundary-links="true" >
         </dir-pagination-controls>
         </div>
-    	<table class="table table-bordered responsive">
+    	<table class="table table-bordered layout-table">
     		<thead >
                 <div sticky offset=100>
     			<tr >
                      <th style="width:100px" ng-click="sort('id')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" label="ID" value="id"  ></u-sort-page-directive>
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="ID" value="id"  ></u-sort-page-directive>
                       
                     </th>
                      <th ng-click="sort('name')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" label="Name" value="name"  ></u-sort-page-directive>
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Name" value="name"  ></u-sort-page-directive>
                     </th>
                      <th ng-click="sort('email')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" label="Email" value="email"  ></u-sort-page-directive>
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Email" value="email"  ></u-sort-page-directive>
                     </th>
                      <th ng-click="sort('body')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" label="Body" value="body"  ></u-sort-page-directive>
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Body" value="body"  ></u-sort-page-directive>
                     </th>
     			</tr>
                 </div>
