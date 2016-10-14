@@ -347,7 +347,7 @@ a {
     .desktop {
         display:none;
     }
-    dir-pagination-controls {
+    dir-pagination-controls.page-sticky {
         display:none;
     }
     dir-pagination-controls.in {
@@ -515,6 +515,29 @@ a {
 
     .superscript {
         font-size:7px;
+    }
+
+    #circle-action { 
+        bottom: 25px;
+        right: 40px;
+        width:40px; 
+        height:40px; 
+        background: #01A3D4;
+        border-radius:50%; 
+        color: white;
+        
+        font-size: 16px;
+        position: fixed;
+        z-index: 1600;
+    } 
+
+    #circle-action> span {
+         
+           margin: 0;
+           position: absolute;               /* 2 */
+           top: 50%;   
+           left: 40%;                      /* 3 */
+           transform: translate(0, -50%) 
     }
 
 
