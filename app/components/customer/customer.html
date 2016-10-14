@@ -31,7 +31,7 @@
                <tr>
                     <td class="search-control"  ng-class = "!pageCollapsed && 'in'">
                         <label><i class="fa fa-search" aria-hidden="true"></i>
-                             <input class="form-control"  type="text" ng-model="search.$" required>
+                             <input class="form-control"  type="text" ng-model="search.$" placeholder="Search here" required>
                         </label>
                     </td>
                     <td align=right>
@@ -61,43 +61,52 @@
        
 
         <!--  /***********************************************desktop********************************************/-->
-    	<table class="table table-bordered layout-table desktop">
+    	<table  class="table table-bordered layout-table desktop">
     		<thead >
                 <div sticky offset=100>
     			<tr >
-                     <th style="width:50px" ng-click="sort('id')">
+                     <!--<th style="width:50px" ng-click="sort('id')">
                         <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="ID" value="id"  ></u-sort-page-directive>
-                    </th>
-                     <th ng-click="sort('fullName')">
+                    </th> -->
+                    <th style="width:5%">   </th>
+                     <th style="width:90%" ng-click="sort('fullName')">
                         <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
                     </th>
+                    <th style="width:5%"></th>
                    
     			</tr>
                 </div>
     		</thead>
     		<tbody>
     			<tr dir-paginate="datas in vm.data_final|filter:getFullName|orderBy:sortKey:reverse|filter:search|itemsPerPage:10"  >
-    				<td ng-bind="datas.id"></td>
-                      <td ng-bind="datas.fullName"></td>
+    				<!--<td ng-bind="datas.id"></td> -->
+                    <td ><img src="{{datas.img}}" /></td>
+                    <td valign="middle">{{datas.fullName}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
+                    <td><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
     			</tr>
     		</tbody>
     	</table>
 
         <!--/***********************************************mobile********************************************/-->
-        <table class="table table-bordered layout-table mobile">
+        <table  class="table table-bordered layout-table mobile">
             <thead >
                 <div sticky offset=100>
                 <tr >
                      <th style="width:50px" ng-click="sort('id')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="ID" value="id"  ></u-sort-page-directive>
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="" value="id"  ></u-sort-page-directive>
                     </th>
+                     <th ng-click="sort('fullName')">
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
+                    </th>
+                    <th style="width:5%"></th>
                 </tr>
                 </div>
             </thead>
             <tbody>
                 <tr dir-paginate="datas in vm.data_final|filter:getFullName|orderBy:sortKey:reverse|filter:search|itemsPerPage:10"  >
-                    <td ng-bind="datas.id"></td>
-                      
+                    <td><img src="{{datas.img}}" /></td>
+                    <td>{{datas.fullName}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
+                     <td><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
                 </tr>
             </tbody>
         </table>
