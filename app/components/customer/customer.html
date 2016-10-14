@@ -21,35 +21,37 @@
 
         <div sticky offset="43" class="sticky" style="background-color:white">
             <table style="width:100%">
-                <tr>
+                 <tr>
                     <td><h3 class="title-header">{{vm.titleHeader}}</h3></td>
                     <td valign=middle align=right><i class="fa fa-2x fa-cog" aria-hidden="true"></i></td> 
 
-               </tr>   
+               </tr>  
+            </table>
+            <table style="width:100%">
                <tr>
-                    <td>
-                        <label>Any: 
+                    <td class="search-control"  ng-class = "!pageCollapsed && 'in'">
+                        <label><i class="fa fa-search" aria-hidden="true"></i>
                              <input class="form-control"  type="text" ng-model="search.$" required>
                         </label>
                     </td>
-                    <td align=right><dir-pagination-controls
-                        max-size="10"
-                        direction-links="true"
-                        boundary-links="true" >
-                         </dir-pagination-controls> </td>
+                    <td align=right>
+                       
+                            <a class = "visible-xs"  
+                                    ng-init = "pageCollapsed = true" 
+                                    ng-click = "pageCollapsed = !pageCollapsed" >
+                                    <span>
+                                        <i class = "fa fa-bars fa-lg" ></i>
+                                    </span>
+                            </a>
+                     </td>
+               </tr>
+               <tr>
+                    <td colspan=2>
+                         <dir-pagination-controls ng-class = "!pageCollapsed && 'in'" max-size="10" direction-links="true" boundary-links="true" ></dir-pagination-controls> 
+                    </td>
                </tr> 
             </table>
-                
-     
-             <!--
-            <div><h3 class="title-header">{{vm.titleHeader}}</h3></div>
-             
-            <div ><label>Any: <input ng-model="search.$"></label></div>
-            <dir-pagination-controls
-                        max-size="10"
-                        direction-links="true"
-                        boundary-links="true" >
-            </dir-pagination-controls> -->
+            
         </div>
 
              
@@ -58,7 +60,7 @@
           
        
 
-        <!--desktop-->
+        <!--  /***********************************************desktop********************************************/-->
     	<table class="table table-bordered layout-table desktop">
     		<thead >
                 <div sticky offset=100>
@@ -81,7 +83,7 @@
     		</tbody>
     	</table>
 
-        <!--mobile-->
+        <!--/***********************************************mobile********************************************/-->
         <table class="table table-bordered layout-table mobile">
             <thead >
                 <div sticky offset=100>
