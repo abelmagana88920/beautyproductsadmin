@@ -518,7 +518,7 @@ a {
     }
 
     #circle-action { 
-        bottom: 25px;
+        bottom: 40px;
         right: 40px;
         width:40px; 
         height:40px; 
@@ -535,9 +535,9 @@ a {
          
            margin: 0;
            position: absolute;               /* 2 */
-           top: 50%;   
+           top: 15%;   
            left: 40%;                      /* 3 */
-           transform: translate(0, -50%) 
+          /* transform: translate(0, -50%)  */
     }
 
 
