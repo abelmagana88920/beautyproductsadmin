@@ -15,7 +15,29 @@
                     <p>Reverse: {{vm.reverse}}</p>
                     <p>Search String : {{search}}</p>
     </div>   -->
-    <div id="circle-action"><span>+</span></div>
+     <div class="treatment-class" ng-show="vm.addCTOptionFReverse">
+              <div class="label"> Add Treatment </div>
+              <span>
+                <i class="fa fa-1x fa-users" aria-hidden="true"></i>
+              </span>
+    </div>
+
+    <div class="customer-class" ng-show="vm.addCTOptionFReverse">
+            <div class="label"> Add Customer </div>
+              <span>
+                <i class="fa fa-1x fa-users" aria-hidden="true"></i>
+              </span>
+    </div>
+
+
+    <div class="customer-and-treatment-modal-class">
+         
+            <span ng-click="vm.customerAndTreatmentModal()">
+                <b ng-show="!vm.addCTOptionFReverse">+</b>
+                <b ng-show="vm.addCTOptionFReverse">x</b>
+            </span>
+      
+    </div>
 
    
     <div class="table-responsive">

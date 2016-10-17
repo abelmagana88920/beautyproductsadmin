@@ -5,15 +5,17 @@
         .module('app')
         .controller('CustomerCtrl', CustomerCtrl);
 
-    CustomerCtrl.$inject = ['$scope', '$state','ModalService', 'QueryService','logger'];
+    CustomerCtrl.$inject = ['$scope', '$state','ModalService', 'QueryService','logger','$uibModalStack'];
 
-    function CustomerCtrl($scope, $state, ModalService, QueryService,logger) {
+    function CustomerCtrl($scope, $state, ModalService, QueryService,logger, $uibModalStack) {
         var vm = this;
         
         vm.titleHeader = 'My Customer';
-        vm.message_modal = message_modal;
+       
         vm.sort = sort;
         vm.getFullName = getFullName;
+        
+        vm.customerAndTreatmentModal = customerAndTreatmentModal;
 
         vm.data = {};
 
@@ -35,6 +37,21 @@
         
         function getFullName(person) {
            return person.fullName = person.firstname + ' ' + person.lastname;
+        }
+
+       
+
+        function customerAndTreatmentModal () {
+            vm.addCTOptionFReverse = !vm.addCTOptionFReverse; //if true make it false and vice versa
+
+            /*if (vm.addCTOptionFReverse) {
+                var content =  {
+                    message:'Hello World!'
+                }
+                ModalService.customer_and_treatment_modal(content);
+            } else {
+                $uibModalStack.dismissAll();
+            } */
         }
 
         function message_modal () {

@@ -530,21 +530,77 @@ a {
         font-size:7px;
     }
 
-    #circle-action { 
+    .customer-class {
+        bottom: 105px;
+        right: 40px;
+        width:50px; 
+        height:50px; 
+        background: #fff;
+        border-radius:50%; 
+        color: #898989;
+
+        font-size: 16px;
+        position: fixed;
+        z-index: 1600;
+        box-shadow: 0 0 2px 1px #aaa;
+    }
+
+     .customer-class> span {
+           margin: 0;
+           position: absolute;               /* 2 */
+           top: 20%;   
+           left: 31%;                      /* 3 */
+    }
+
+    .customer-class>div.label , .treatment-class>div.label {
+         right: 118px;
+          top: 8px;
+          position: relative;
+          background-color: #393939;
+    }
+
+     .treatment-class {
+
+         bottom: 168px;
+        right: 40px;
+        width:50px; 
+        height:50px; 
+        background: #fff;
+        border-radius:50%; 
+        color: #898989;
+
+        font-size: 16px;
+        position: fixed;
+        z-index: 1600;
+        box-shadow: 0 0 2px 1px #aaa;
+    }
+
+     .treatment-class> span {
+           margin: 0;
+           position: absolute;               /* 2 */
+           top: 20%;   
+           left: 31%;                      /* 3 */
+    }
+
+    .customer-and-treatment-modal-class {
         bottom: 45px;
         right: 40px;
         width:50px; 
         height:50px; 
-        background: #01A3D4;
+
+         background: #01A3D4;
         border-radius:50%; 
         color: white;
         
         font-size: 16px;
+
         position: fixed;
         z-index: 1600;
-    } 
 
-    #circle-action> span {
+    }
+
+
+    .customer-and-treatment-modal-class> span {
          
            margin: 0;
            position: absolute;               /* 2 */
@@ -621,11 +677,17 @@ a {
        text-align:center;
   }
 
-  .dropdown-actions {
+ 
+
+  .dropdown-menu {
+     z-index: 1800 !important; 
+  }
+  
+   .dropdown-actions {
      position: absolute;
     top: 38%;
     left: -150px;
-    z-index: 1000;
+    z-index: 1000 !important;
     display: none;
     float: left;
     min-width: 160px;
@@ -645,9 +707,7 @@ a {
     right: 29px;
   }
 
-  .dropdown-menu {
-     z-index: 1800 !important;
-  }
+  
 
 
  

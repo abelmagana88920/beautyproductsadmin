@@ -13,7 +13,8 @@
             form_modal:    form_modal,
             confirm_modal: confirm_modal,
             email_modal:   email_modal,
-            message_modal: message_modal
+            message_modal: message_modal,
+            customer_and_treatment_modal: customer_and_treatment_modal
         };
 
         return service;
@@ -115,6 +116,22 @@
                 'controllerAs'  : 'vm',
                 'size'          : 'sm',
                 'backdrop'      : true,
+                'resolve'       : {
+                    message     : function () {
+                        return msg;
+                    }
+                }
+            });
+        }
+
+         function customer_and_treatment_modal (msg) {
+            var modalInstance = $uibModal.open({
+                'templateUrl'   : 'app/shared/modals/customer-and-treatment-modal/customer-and-treatment-modal.html',
+                'controller'    : 'CustomerAndTreatmentModalCtrl',
+                'controllerAs'  : 'vm',
+                'windowClass'   : "customer-and-treatment-modal-class",
+                'size'          : 'sm',
+                'backdrop'      : false,
                 'resolve'       : {
                     message     : function () {
                         return msg;
