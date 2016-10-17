@@ -22,19 +22,59 @@
     </ul>
 </div>  -->
 
+
 <div class="footer side-nav navbar-collapse collapse" ng-class = "!navCollapsed && 'in'">
 
-    <ul class="nav navbar-nav side-nav">
-        <li ui-sref-active="active"> 
-            <a href="" ui-sref="app.dashboard">
-                <i class="fa fa-fw fa-dashboard"></i>
-                 Dashboard</a>
-            <a href="" ui-sref="app.customer">
+<!--
+ <div class="Row">
+        <div class="Column">C1</div>
+        <div class="Column">C2</div>
+        <div class="Column">C3</div>
+ </div> -->
+
+ <div class="Row mobile menu">
+
+       <div style="white-space: nowrap" nowrap class="Column" ui-sref-active="active">
+          
+             <a href="" ui-sref="app.customer" >
                 <i class="fa fa-fw fa-users"></i>
-                 Customers</a>
+                 My Customers</a>
+
+        </div>
+        <div style="white-space: nowrap" nowrap class="Column" ui-sref-active="active">
+            <a href="" ui-sref="app.dashboard" >
+                <i class="fa fa-fw fa-clock-o" ></i>
+                 Appointments</a>
+        </div>
+       
+        <div style="white-space: nowrap" nowrap class="Column" ui-sref-active="active">
             <a href="" ui-sref="app.comment">
-                <i class="fa fa-fw fa-comment"></i>
-                 Comment</a>
-       </li>
+                <i class="fa fa-fw fa-book"></i>
+                 My Diary</a>
+        </div>
+ </div>
+
+
+<ul class="nav navbar-nav side-nav desktop" >
+
+        <li ui-sref-active="active"> 
+            <a href="" ui-sref="app.customer" >
+                <i class="fa fa-fw fa-users"></i>
+                 My Customers</a>
+         </li>
+          <li ui-sref-active="active"> 
+            <a href="" ui-sref="app.dashboard" >
+                <i class="fa fa-fw fa-clock-o" ></i>
+                 Appointments</a>
+          </li>
+        <li ui-sref-active="active"> 
+            <a href="" ui-sref="app.comment">
+                <i class="fa fa-fw fa-book"></i>
+                 My Diary</a>
+        </li>
+      
     </ul> 
 </div>
+
+
+

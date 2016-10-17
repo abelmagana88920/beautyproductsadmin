@@ -17,10 +17,13 @@
 
          vm.pager = {};
       
-         function initController() {
+        function initController() {
               vm.data_final = {};
               vm.data_final =vm.data; //reassign data because it is empty
         }
+
+
+       
 
         $scope.sort = function(keyname){
             $scope.sortKey = keyname;   //set the sortKey to the param passed

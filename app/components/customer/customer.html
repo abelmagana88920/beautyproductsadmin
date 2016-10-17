@@ -17,32 +17,39 @@
     </div>  -->
     <div id="circle-action"><span>+</span></div>
 
+   
     <div class="table-responsive">
 
-        <div sticky offset="43" class="sticky" style="background-color:white">
+        <div sticky offset="50" class="sticky" style="background-color:white">
             <table style="width:100%">
                  <tr>
-                    <td><h3 class="title-header">{{vm.titleHeader}}</h3></td>
-                    <td valign=middle align=right><i class="fa fa-2x fa-cog" aria-hidden="true"></i></td> 
+                    <td style="width:70%"><h5 class="title-header">{{vm.titleHeader}}</h5></td>
+                     
+                    <td style="width:30%" valign=middle align=right>
+                         <div style="width: 75px"> 
+                                <div class="oval" style="float:left"><span>10</span></div> <i class="fa fa-2x fa-cog" aria-hidden="true"></i> 
+                         </div>  
+                     </td> 
 
                </tr>  
             </table>
             <table style="width:100%">
                <tr>
-                    <td class="search-control"  ng-class = "!pageCollapsed && 'in'">
+                    <td nowrap style="width:80%" class="search-control"  ng-class = "!pageCollapsed && 'in'">
                         <label><i class="fa fa-search" aria-hidden="true"></i>
-                             <input class="form-control"  type="text" ng-model="search.$" placeholder="Search here" required>
+                             <input class="form-control"  type="text" ng-model="search.$" placeholder="Search here" required> 
+                             <i class="fa fa-times-thin" ng-click="search=''"></i>
                         </label>
                     </td>
-                    <td align=right>
-                       
-                            <a class = "visible-xs"  
-                                    ng-init = "pageCollapsed = true" 
-                                    ng-click = "pageCollapsed = !pageCollapsed" >
-                                    <span>
-                                        <i class = "fa fa-bars fa-lg" ></i>
-                                    </span>
-                            </a>
+                    <td style="width:10%"  align=right>
+                                <a class = "visible-xs"  
+                                        ng-init = "pageCollapsed = true" 
+                                        ng-click = "pageCollapsed = !pageCollapsed" >
+                                        <span>
+                                            <i class = "fa fa-bars fa-lg" ></i>
+                                        </span>
+                                </a>
+                           
                      </td>
                </tr>
                <tr>
@@ -54,11 +61,10 @@
             
         </div>
 
-             
-               
+
+
+
         
-          
-       
 
         <!--  /***********************************************desktop********************************************/-->
     	<table  class="table table-bordered layout-table desktop">
@@ -69,11 +75,16 @@
                         <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="ID" value="id"  ></u-sort-page-directive>
                     </th> -->
                     <th style="width:5%">   </th>
-                     <th style="width:90%" ng-click="sort('fullName')">
+                     <th style="width:15%" ng-click="sort('fullName')">
                         <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
                     </th>
-                    <th style="width:5%"></th>
-                   
+                    <th style="width:10%" ng-click="sort('email')"> 
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Email" value="email"  ></u-sort-page-directive> 
+                    </th>
+                     <th style="width:15%" ng-click="sort('address')"> 
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Address" value="address"  ></u-sort-page-directive> 
+                    </th>
+                     <th style="width:5%"></th>
     			</tr>
                 </div>
     		</thead>
@@ -82,7 +93,34 @@
     				<!--<td ng-bind="datas.id"></td> -->
                     <td ><img src="{{datas.img}}" /></td>
                     <td valign="middle">{{datas.fullName}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
-                    <td><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
+                     <td ng-bind="datas.email"> /></td>
+                     <td ng-bind="datas.address"> /></td>
+                    <td> 
+                          <ul class="nav navbar-right top-nav">
+                            <li class="dropdown"
+                                uib-dropdown on-toggle="toggled(open)">
+                                <a  class="dropdown-toggle"
+                                uib-dropdown-toggle>
+                                   <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-actions">
+                                   <li>
+                                    <a >
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  >
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                        Remove
+                                    </a>
+                                </li>
+                                
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
     			</tr>
     		</tbody>
     	</table>
@@ -106,7 +144,33 @@
                 <tr dir-paginate="datas in vm.data_final|filter:getFullName|orderBy:sortKey:reverse|filter:search|itemsPerPage:10"  >
                     <td><img src="{{datas.img}}" /></td>
                     <td>{{datas.fullName}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
-                     <td><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
+                     <td>
+                          <ul class="nav navbar-right top-nav">
+                            <li class="dropdown"
+                                uib-dropdown on-toggle="toggled(open)">
+                                <a  class="dropdown-toggle"
+                                uib-dropdown-toggle>
+                                   <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-actions">
+                                   <li>
+                                    <a >
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  >
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                        Remove
+                                    </a>
+                                </li>
+                                
+                                </ul>
+                            </li>
+                        </ul>
+
+                     </td>
                 </tr>
             </tbody>
         </table>

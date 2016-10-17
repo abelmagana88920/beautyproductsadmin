@@ -97,6 +97,8 @@
         padding-bottom: 7.5px;
     }
 
+   
+
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
@@ -109,6 +111,17 @@
         margin-top: -14px;
         padding: 0 10px;
     }
+
+    div.menu>div>a  {
+        color: rgba(115, 115, 115, 0.86) !important;
+        text-decoration:none;
+    }
+     div.menu>div.active>a  {
+        color: #01A3D4 !important;
+        text-decoration:none;
+    }
+
+     
 
     .collapse-btn{
         position: fixed;
