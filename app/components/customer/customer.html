@@ -11,10 +11,10 @@
     </button> -->
     <!--
     <div class="alert alert-info">
-                    <p>Sort key: {{sortKey}}</p>
-                    <p>Reverse: {{reverse}}</p>
+                    <p>Sort key: {{vm.sortKey}}</p>
+                    <p>Reverse: {{vm.reverse}}</p>
                     <p>Search String : {{search}}</p>
-    </div>  -->
+    </div>   -->
     <div id="circle-action"><span>+</span></div>
 
    
@@ -75,21 +75,21 @@
                         <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="ID" value="id"  ></u-sort-page-directive>
                     </th> -->
                     <th style="width:5%">   </th>
-                     <th style="width:15%" ng-click="sort('fullName')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
+                     <th style="width:15%" ng-click="vm.sort('fullName')">
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
                     </th>
-                    <th style="width:10%" ng-click="sort('email')"> 
-                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Email" value="email"  ></u-sort-page-directive> 
+                    <th style="width:10%" ng-click="vm.sort('email')"> 
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Email" value="email"  ></u-sort-page-directive> 
                     </th>
-                     <th style="width:15%" ng-click="sort('address')"> 
-                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Address" value="address"  ></u-sort-page-directive> 
+                     <th style="width:15%" ng-click="vm.sort('address')"> 
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Address" value="address"  ></u-sort-page-directive> 
                     </th>
                      <th style="width:5%"></th>
     			</tr>
                 </div>
     		</thead>
     		<tbody>
-    			<tr dir-paginate="datas in vm.data_final|filter:getFullName|orderBy:sortKey:reverse|filter:search|itemsPerPage:10"  >
+    			<tr dir-paginate="datas in vm.data_final|filter:vm.getFullName|orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
     				<!--<td ng-bind="datas.id"></td> -->
                     <td ><img src="{{datas.img}}" /></td>
                     <td valign="middle">{{datas.fullName}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
@@ -130,18 +130,18 @@
             <thead >
                 <div sticky offset=100>
                 <tr >
-                     <th style="width:50px" ng-click="sort('id')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="" value="id"  ></u-sort-page-directive>
+                     <th style="width:50px" ng-click="vm.sort('id')">
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="" value="id"  ></u-sort-page-directive>
                     </th>
-                     <th ng-click="sort('fullName')">
-                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
+                     <th ng-click="vm.sort('fullName')">
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
                     </th>
                     <th style="width:5%"></th>
                 </tr>
                 </div>
             </thead>
             <tbody>
-                <tr dir-paginate="datas in vm.data_final|filter:getFullName|orderBy:sortKey:reverse|filter:search|itemsPerPage:10"  >
+                <tr dir-paginate="datas in vm.data_final|filter:vm.getFullName|orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
                     <td><img src="{{datas.img}}" /></td>
                     <td>{{datas.fullName}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
                      <td>

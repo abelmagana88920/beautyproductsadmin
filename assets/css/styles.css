@@ -645,6 +645,10 @@ a {
     right: 29px;
   }
 
+  .dropdown-menu {
+     z-index: 1800 !important;
+  }
+
 
  
 

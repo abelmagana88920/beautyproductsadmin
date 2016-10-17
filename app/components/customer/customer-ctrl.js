@@ -12,6 +12,9 @@
         
         vm.titleHeader = 'My Customer';
         vm.message_modal = message_modal;
+        vm.sort = sort;
+        vm.getFullName = getFullName;
+
         vm.data = {};
 
 
@@ -25,12 +28,12 @@
 
        
 
-        $scope.sort = function(keyname){
-            $scope.sortKey = keyname;   //set the sortKey to the param passed
-            $scope.reverse = !$scope.reverse; //if true make it false and vice versa
+        function sort(keyname){
+            vm.sortKey = keyname;   //set the sortKey to the param passed
+            vm.reverse = !vm.reverse; //if true make it false and vice versa
         }
         
-        $scope.getFullName = function(person) {
+        function getFullName(person) {
            return person.fullName = person.firstname + ' ' + person.lastname;
         }
 
