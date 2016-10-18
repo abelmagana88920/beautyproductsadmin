@@ -97,8 +97,8 @@
                         <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="ID" value="id"  ></u-sort-page-directive>
                     </th> -->
                     <th style="width:5%">   </th>
-                     <th style="width:15%" ng-click="vm.sort('fullName')">
-                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
+                     <th style="width:15%" ng-click="vm.sort('name')">
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="name" value="name"  ></u-sort-page-directive>
                     </th>
                     <th style="width:10%" ng-click="vm.sort('email')"> 
                         <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Email" value="email"  ></u-sort-page-directive> 
@@ -111,10 +111,10 @@
                 </div>
     		</thead>
     		<tbody>
-    			<tr   dir-paginate="datas in vm.data_final|filter:vm.getFullName|orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
+    			<tr   dir-paginate="datas in vm.data_final|orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
     				<!--<td ng-bind="datas.id"></td> -->
-                    <td class="image-cropper" ui-sref="app.customer-profile({id:datas.id})"><img class="rounded img-fluid"  src="{{datas.img}}" /></td>
-                    <td   ui-sref="app.customer-profile({id:datas.id})" valign="middle">{{datas.fullName}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
+                    <td class="image-cropper" ui-sref="app.customer-profile({id:datas.id})"><img class="rounded img-fluid"  src="{{datas.face_front}}" /></td>
+                    <td   ui-sref="app.customer-profile({id:datas.id})" valign="middle">{{datas.name}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
                      <td ng-bind="datas.email"> /></td>
                      <td ng-bind="datas.address"> /></td>
                     <td> 
@@ -155,17 +155,17 @@
                      <th style="width:70px" ng-click="vm.sort('id')">
                         <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="" value="id"  ></u-sort-page-directive>
                     </th>
-                     <th ng-click="vm.sort('fullName')">
-                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
+                     <th ng-click="vm.sort('name')">
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Name" value="name"  ></u-sort-page-directive>
                     </th>
                     <th style="width:5%"></th>
                 </tr>
                 </div>
             </thead>
             <tbody>
-                <tr dir-paginate="datas in vm.data_final|filter:vm.getFullName|orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
-                    <td class="image-cropper" ui-sref="app.customer-profile({id:datas.id})"><img class="rounded img-fluid"  src="{{datas.img}}" /></td>
-                    <td   ui-sref="app.customer-profile({id:datas.id})">{{datas.fullName}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
+                <tr dir-paginate="datas in vm.data_final|orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
+                    <td class="image-cropper" ui-sref="app.customer-profile({id:datas.id})"><img class="rounded img-fluid"  src="{{datas.face_front}}" /></td>
+                    <td   ui-sref="app.customer-profile({id:datas.id})">{{datas.name}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
                      <td>
                           <ul class="nav navbar-right top-nav">
                             <li class="dropdown"

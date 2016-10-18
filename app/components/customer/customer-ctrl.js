@@ -13,7 +13,7 @@
         vm.titleHeader = 'My Customer';
        
         vm.sort = sort;
-        vm.getFullName = getFullName;
+         
         
         vm.customerAndTreatmentModal = customerAndTreatmentModal;
         vm.removeCustomerModal = removeCustomerModal;
@@ -37,9 +37,7 @@
             vm.reverse = !vm.reverse; //if true make it false and vice versa
         }
         
-        function getFullName(person) {
-           return person.fullName = person.firstname + ' ' + person.lastname;
-        }
+        
 
        
 
@@ -76,7 +74,7 @@
         (function getPost () {
             var params = {}
             var route = {
-                customers : ""
+                consultation : ""
             }
            /* https://jsonplaceholder.typicode.com/users*/
            QueryService.query('GET', false, false, false, false, route)

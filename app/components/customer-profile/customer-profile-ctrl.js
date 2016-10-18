@@ -19,11 +19,14 @@
         
         vm.customerAndTreatmentModal = customerAndTreatmentModal;
         vm.removeCustomerModal = removeCustomerModal;
+        vm.getTreatmentName = getTreatmentName;
 
         vm.data = {};
         vm.data_final = {};
+        vm.consultationtreatment_data = {};
+         vm.consultationtreatment_data_final = [];
         vm.treatment_data = {};
-        vm.treatment_data_final = {};
+        vm.treatment_data_filter = {};
 
 
          vm.pager = {};
@@ -57,6 +60,12 @@
             } */
         }
 
+        function getTreatmentName(objects) {
+             
+            vm.treatment_data_filter = $filter('filter')(vm.treatment_data, {'id':objects.treatment_id},true);  //filter
+            return objects.treatment_name=  vm.treatment_data_filter[0].name;
+        }
+
         function message_modal () {
             var content =  {
                 header:'Message',
@@ -73,10 +82,11 @@
             ModalService.remove_customer_modal(content);
         }
 
+        /*********************************** Consulatation ********************************/
         (function getPost () {
             var params = {}
             var route = {
-                customers : ""
+                consultation : ""
             }
            /* https://jsonplaceholder.typicode.com/users*/
            QueryService.query('GET', false, false, false, false, route)
@@ -96,10 +106,15 @@
            })
         })();
 
+
+        
+
+
+          /*********************************** Treatments ********************************/
          (function getPost () {
             var params = {}
             var route = {
-                customer_treatments : ""
+                treatments : ""
             }
            /* https://jsonplaceholder.typicode.com/users*/
            QueryService.query('GET', false, false, false, false, route)
@@ -111,11 +126,37 @@
                 logger.error(MESSAGE.error, err, '');
            })
            .then(function(response) {
-                 var id = parseInt($stateParams.id);
-                 vm.treatment_data = $filter('filter')(vm.treatment_data, {'customer_id':id},true);  //filter
-                 vm.treatment_data_final =vm.treatment_data; //reassign data because it is empty
+                 //var id = parseInt($stateParams.id);
                  
            })
-        })()
+        })();
+
+
+
+        /*********************************** Consulatation X Treatments ********************************/
+         (function getPost () {
+            var params = {}
+            var route = {
+                consultationsxtreatments : ""
+            }
+           /* https://jsonplaceholder.typicode.com/users*/
+           QueryService.query('GET', false, false, false, false, route)
+           .then(function (response) {
+                vm.consultationtreatment_data = response.data;
+                
+                // logger.success('',response, MESSAGE.success);
+           }, function (err) {
+                logger.error(MESSAGE.error, err, '');
+           })
+           .then(function(response) {
+                 var id = parseInt($stateParams.id);
+                 vm.consultationtreatment_data = $filter('filter')(vm.consultationtreatment_data, {'consultation_id':id},true);  //filter
+                 vm.consultationtreatment_data_final = vm.consultationtreatment_data;
+
+                 
+           })
+        })();
+
+        
     }
 })();

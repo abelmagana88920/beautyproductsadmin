@@ -1,42 +1,62 @@
 [
   {
     "id": 1,
-    "treatment_name": "Peel in/Peel Out",
+    "name": "Peel in/Peel Out",
+     "created_by":2,
+     "description": ""
   },
   {
     "id": 2,
-    "treatment_name": "Hypodermic",
+    "name": "Hypodermic",
+     "created_by":2,
+     "description": ""
   },
   {
     "id": 3,
-    "treatment_name": "Long Hypodermic Lift",
+    "name": "Long Hypodermic Lift",
+     "created_by":2,
+     "description": ""
   },
   {
     "id": 4,
-    "treatment_name": "Short Hypodermic Lift",
+    "name": "Short Hypodermic Lift",
+     "created_by":2,
+     "description": ""
   },
   {
     "id": 5,
-    "treatment_name": "Eyes Hypodermic list",
+    "name": "Eyes Hypodermic list",
+     "created_by":2,
+     "description": ""
   },
   {
     "id": 6,
-    "treatment_name": "Liposomes",
+    "name": "Liposomes",
+     "created_by":2,
+     "description": ""
   },
   {
     "id": 7,
-    "treatment_name": "Microbiotic",
+    "name": "Microbiotic",
+     "created_by":2,
+     "description": ""
   },
   {
     "id": 8,
-    "treatment_name": "New Light",
+    "name": "New Light",
+     "created_by":2,
+     "description": ""
   },
   {
     "id": 9,
-    "treatment_name": "Peel in/Peel Out",
+    "name": "Peel in/Peel Out",
+     "created_by":2,
+     "description": ""
   },
   {
     "id": 10,
-    "treatment_name": "Techno-spa",
+    "name": "Techno-spa",
+     "created_by":2,
+     "description": ""
   }
 ]
