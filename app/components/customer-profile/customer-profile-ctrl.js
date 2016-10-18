@@ -3,11 +3,13 @@
 
     angular
         .module('app')
-        .controller('CustomerCtrl', CustomerCtrl);
+        .controller('CustomerProfileCtrl', CustomerProfileCtrl);
 
-    CustomerCtrl.$inject = ['$scope', '$state','ModalService', 'QueryService','logger','$uibModalStack','$location'];
+    CustomerProfileCtrl.$inject = ['$scope', '$state','ModalService', 'QueryService','logger','$uibModalStack','$stateParams','$filter'];
 
-    function CustomerCtrl($scope, $state, ModalService, QueryService,logger, $uibModalStack,$location) {
+    function CustomerProfileCtrl($scope, $state, ModalService, QueryService,logger, $uibModalStack, $stateParams,$filter) {
+
+        
         var vm = this;
         
         vm.titleHeader = 'My Customer';
@@ -17,16 +19,17 @@
         
         vm.customerAndTreatmentModal = customerAndTreatmentModal;
         vm.removeCustomerModal = removeCustomerModal;
-        
 
         vm.data = {};
+        vm.data_final = {};
+        vm.treatment_data = {};
+        vm.treatment_data_final = {};
 
 
          vm.pager = {};
       
         function initController() {
-              vm.data_final = {};
-              vm.data_final =vm.data; //reassign data because it is empty
+              
         }
 
 
@@ -41,7 +44,6 @@
            return person.fullName = person.firstname + ' ' + person.lastname;
         }
 
-       
 
         function customerAndTreatmentModal () {
             vm.addCTOptionFReverse = !vm.addCTOptionFReverse; //if true make it false and vice versa
@@ -54,8 +56,6 @@
                 $uibModalStack.dismissAll();
             } */
         }
-
-         
 
         function message_modal () {
             var content =  {
@@ -88,7 +88,33 @@
                 logger.error(MESSAGE.error, err, '');
            })
            .then(function(response) {
-                initController();
+                 
+                  var id = parseInt($stateParams.id);
+                  vm.data = $filter('filter')(vm.data, {'id':id},true);  //filter
+
+                  vm.data_final =vm.data; //reassign data because it is empty
+           })
+        })();
+
+         (function getPost () {
+            var params = {}
+            var route = {
+                customer_treatments : ""
+            }
+           /* https://jsonplaceholder.typicode.com/users*/
+           QueryService.query('GET', false, false, false, false, route)
+           .then(function (response) {
+                vm.treatment_data = response.data;
+                
+                // logger.success('',response, MESSAGE.success);
+           }, function (err) {
+                logger.error(MESSAGE.error, err, '');
+           })
+           .then(function(response) {
+                 var id = parseInt($stateParams.id);
+                 vm.treatment_data = $filter('filter')(vm.treatment_data, {'customer_id':id},true);  //filter
+                 vm.treatment_data_final =vm.treatment_data; //reassign data because it is empty
+                 
            })
         })()
     }

@@ -10,7 +10,8 @@
             'dataGrid', 'pagination', 'ngMaterial',
             'sticky',
             //'tableSort',
-            'angularUtils.directives.dirPagination'
+            'angularUtils.directives.dirPagination',
+            'ngMaterial'
             //'hl.sticky'
         ])
         .config(router);
@@ -60,6 +61,13 @@
                 url             : 'customer',  
                 templateUrl     : 'app/components/customer/customer.html',
                 controller      : 'CustomerCtrl',
+                controllerAs    : 'vm'
+            })
+
+             .state('app.customer-profile', {
+                url             : 'customer-profile/:id',  
+                templateUrl     : 'app/components/customer-profile/customer-profile.html',
+                controller      : 'CustomerProfileCtrl',
                 controllerAs    : 'vm'
             })
 

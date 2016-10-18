@@ -530,6 +530,46 @@ a {
         font-size:7px;
     }
 
+    .ft8 {
+        font-size:8px !important;
+    }
+    .ft9 {
+        font-size:9px !important;
+    }
+    .ft10 {
+        font-size:10px !important;
+    }
+    .ft11 {
+        font-size:11px !important;
+    }
+    .ft12 {
+        font-size:12px !important;
+    }
+    .ft13 {
+        font-size:13px !important;
+    }
+    .ft14 {
+        font-size:14px !important;
+    }
+    .ft15 {
+        font-size:15px !important;
+    }
+    .ft16 {
+        font-size:16px !important;
+    }
+    .ft17 {
+        font-size:17px !important;
+    }
+    .ft18 {
+        font-size:18px !important;
+    }
+    .ft19 {
+        font-size:19px !important;
+    }
+    .ft20 {
+        font-size:20px !important;
+    }
+
     .customer-class {
         bottom: 105px;
         right: 40px;
@@ -596,6 +636,7 @@ a {
 
         position: fixed;
         z-index: 1600;
+        box-shadow: 0 9px 8px -3px #aaa
 
     }
 
@@ -679,7 +720,7 @@ a {
       display: table;
       width: 100%;
       table-layout: fixed;
-      border-spacing: 10px;
+      border-spacing: 10px; 
   }
   .Column
   {
@@ -716,6 +757,79 @@ a {
     background-clip: padding-box;
     right: 29px;
   }
+
+  div.tab {
+     border-spacing: 0px !important; 
+
+  }
+
+  div.tab>div>a {
+     text-decoration:none;
+  }
+
+  div.tab>div {
+     
+      border-bottom: 0px solid #01A3D4; 
+        padding-bottom: 4px;
+      padding-top: 9px;
+    
+  }
+
+  div.tab>div.active {
+       
+    
+      
+      border-bottom:solid 1px pink;
+      -webkit-transition: all 250ms ease;
+      -moz-transition: all 250ms ease;
+      -ms-transition: all 250ms ease;
+      -o-transition: all 250ms ease;
+      transition: all 250ms ease;
+      border-bottom: 2px solid #01A3D4;      
+  }
+
+  /*
+
+  .image-cropper {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+img {
+   display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+} */
+
+.image-cropper {
+    max-width: 50px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+.rounded {
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    width: 50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+   
+    background-size:cover;
+}
+
+   
   
 
 

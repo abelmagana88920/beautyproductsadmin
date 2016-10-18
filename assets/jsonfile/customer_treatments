@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "treatment_name": "Peel in/Peel Out",
+    "howmanytimes": 2,
+    "notes":"",
+    "customer_id": 1
+  },
+  {
+    "id": 2,
+    "treatment_name": "Hypodermic",
+    "howmanytimes": 3,
+    "howoften": 2,
+    "notes": "",
+    "customer_id": 1
+  },
+  {
+    "id": 3,
+    "treatment_name": "Long Hypodermic Lift",
+     "customer_id": 1
+  },
+  {
+    "id": 4,
+    "treatment_name": "Short Hypodermic Lift",
+     "customer_id": 1
+  },
+  {
+    "id": 5,
+    "treatment_name": "Eyes Hypodermic list",
+     "customer_id": 1
+  },
+  {
+    "id": 6,
+    "treatment_name": "Liposomes",
+     "customer_id": 2
+  },
+  {
+    "id": 7,
+    "treatment_name": "Microbiotic",
+     "customer_id": 2
+  },
+  {
+    "id": 8,
+    "treatment_name": "New Light",
+     "customer_id": 2
+  },
+  {
+    "id": 9,
+    "treatment_name": "Peel in/Peel Out",
+     "customer_id": 2
+  },
+  {
+    "id": 10,
+    "treatment_name": "Techno-spa",
+     "customer_id": 2
+  }
+]

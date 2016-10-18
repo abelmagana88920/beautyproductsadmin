@@ -14,7 +14,8 @@
             confirm_modal: confirm_modal,
             email_modal:   email_modal,
             message_modal: message_modal,
-            customer_and_treatment_modal: customer_and_treatment_modal
+            customer_and_treatment_modal: customer_and_treatment_modal,
+            remove_customer_modal: remove_customer_modal
         };
 
         return service;
@@ -130,6 +131,22 @@
                 'controller'    : 'CustomerAndTreatmentModalCtrl',
                 'controllerAs'  : 'vm',
                 'windowClass'   : "customer-and-treatment-modal-class",
+                'size'          : 'sm',
+                'backdrop'      : false,
+                'resolve'       : {
+                    message     : function () {
+                        return msg;
+                    }
+                }
+            });
+        }
+
+        function remove_customer_modal (msg) {
+            var modalInstance = $uibModal.open({
+                'templateUrl'   : 'app/shared/modals/remove-customer-modal/remove-customer-modal.html',
+                'controller'    : 'RemoveCustomerModalCtrl',
+                'controllerAs'  : 'vm',
+                /*'windowClass'   : "customer-and-treatment-modal-class", */
                 'size'          : 'sm',
                 'backdrop'      : false,
                 'resolve'       : {

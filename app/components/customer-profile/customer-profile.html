@@ -1,0 +1,277 @@
+<div class=""> <!-- col-md-12-->
+    
+   <!-- Hello World!
+
+<div class="shufra-blue-primary">
+    <p class="text-white">Hello World!</p>
+</div>
+    <button class="btn btn-primary"
+    		ng-click="vm.message_modal()">
+    	Modal {{orderProperty}}
+    </button> -->
+    <!--
+    <div class="alert alert-info">
+                    <p>Sort key: {{vm.sortKey}}</p>
+                    <p>Reverse: {{vm.reverse}}</p>
+                    <p>Search String : {{search}}</p>
+    </div>   -->
+
+   
+    <div class="customer-and-treatment-modal-class" ng-show="tab===2 || tab===3">
+            <span ng-click="vm.customerAndTreatmentModal()">
+                <b>+</b> 
+            </span>
+      
+    </div>
+
+   
+    <div class="table-responsive">
+
+        <div sticky offset="50" class="sticky" style="background-color:white">
+            <table style="width:100%">
+                 <tr>
+                    <td style="width:70%"><h5 class="title-header">{{vm.titleHeader}}</h5></td>
+                     
+                    <td style="width:30%" valign=middle align=right>
+                         <div style="width: 70px"> 
+                                <div style="float:left"><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></div> 
+                                <a ng-click="vm.removeCustomerModal()"><i class="fa fa-2x fa-trash" aria-hidden="true"></i></a>
+                         </div>  
+                     </td> 
+
+               </tr>  
+            </table>
+            
+            <div style="margin-bottom:5px;">
+                 <img src="{{vm.data_final[0].img}}"  style="width:100%; height: 150px">
+            </div>
+            <div class="ft16"> 
+                 <b>{{vm.data_final[0].firstname}} {{vm.data_final[0].lastname}}</b> 
+            </div>
+            <div class="ft9">
+              {{vm.data_final[0].lastvisited}}
+            </div>
+
+
+
+            <div ng-init="tab = 1" class="Row tab menu">
+                 <div style="white-space: nowrap" nowrap class="Column" ng-class="{active:tab===1}">
+                       <a href=""  ng-click="tab = 1">   
+                           Profile</a>
+                  </div>
+                  <div style="white-space: nowrap" nowrap class="Column" ng-class="{active:tab===2}">
+                      <a href="" ng-click="tab = 2" >
+                          
+                           Products</a>
+                  </div>
+                 
+                  <div style="white-space: nowrap" nowrap class="Column" ng-class="{active:tab===3}">
+                      <a href="" ng-click="tab = 3">
+                          
+                           Treatment</a>
+                  </div>
+           </div>
+            
+        </div>
+ 
+
+    <div style="margin-top: 25px">
+           <div ng-show="tab === 1"> 
+                  <table style="line-height:32px">
+                      <tr>
+                          <td style="width:150px"><b>GENDER</b></td>
+                          <td ng-bind="vm.data_final[0].gender"></td>
+                      </tr>
+                      <tr>
+                          <td><b>BIRTHDAY</b></td>
+                          <td ng-bind="vm.data_final[0].birthday"></td>
+                      </tr>
+                      <tr>
+                          <td><b>ADDRESS</b></td>
+                          <td ng-bind="vm.data_final[0].address"></td>
+                      </tr>
+                      <tr>
+                          <td><b>E-MAIL</b></td>
+                          <td ng-bind="vm.data_final[0].email"></td>
+                      </tr>
+                      <tr>
+                          <td><b>PHONE</b></td>
+                          <td>{{vm.data_final[0].phonemain}}</td>
+                      </tr>
+                  </table>
+           </div>
+           <div ng-show="tab === 2">
+                   <table >
+                      <tr>
+                          <td > <span class="ft16">Product Name </span><br> <span class="ft12"> Description </span> <td>
+                      </tr>
+                      <tr>
+                           <td > <span class="ft16">Product Name </span><br> <span class="ft12"> Description </span> <td>
+                      </tr>
+
+                   </table>
+           </div>
+           <div ng-show="tab === 3"> 
+
+                  <table  class="table table-bordered layout-table">
+      
+                    <tbody>
+                        <tr ng-repeat="datas in vm.treatment_data"  >
+                            <td><img src="{{datas.img}}" /></td>
+                            <td>{{datas.treatment_name}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
+                             <td>
+                                  <ul class="nav navbar-right top-nav">
+                                    <li class="dropdown"
+                                        uib-dropdown on-toggle="toggled(open)">
+                                        <a  class="dropdown-toggle"
+                                        uib-dropdown-toggle>
+                                           <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-actions">
+                                           <li>
+                                            <a >
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                Edit
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a  >
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                                Remove
+                                            </a>
+                                        </li>
+                                        
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                             </td>
+                        </tr>
+                    </tbody>
+                </table>
+                  
+          </div>
+     </div>
+ 
+
+       <!--
+        <!- -  /***********************************************desktop********************************************/- ->
+    	<table  class="table table-bordered layout-table desktop">
+    		<thead >
+                <div sticky offset=100>
+    			<tr >
+                     <!- -<th style="width:50px" ng-click="sort('id')">
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="ID" value="id"  ></u-sort-page-directive>
+                    </th> - ->
+                    <th style="width:5%">   </th>
+                     <th style="width:15%" ng-click="vm.sort('fullName')">
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
+                    </th>
+                    <th style="width:10%" ng-click="vm.sort('email')"> 
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Email" value="email"  ></u-sort-page-directive> 
+                    </th>
+                     <th style="width:15%" ng-click="vm.sort('address')"> 
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Address" value="address"  ></u-sort-page-directive> 
+                    </th>
+                     <th style="width:5%"></th>
+    			</tr>
+                </div>
+    		</thead>
+    		<tbody>
+    			<tr dir-paginate="datas in vm.data_final|filter:vm.getFullName|orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
+    				<!- -<td ng-bind="datas.id"></td> - ->
+                    <td ><img src="{{datas.img}}" /></td>
+                    <td valign="middle">{{datas.fullName}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
+                     <td ng-bind="datas.email"> /></td>
+                     <td ng-bind="datas.address"> /></td>
+                    <td> 
+                          <ul class="nav navbar-right top-nav">
+                            <li class="dropdown"
+                                uib-dropdown on-toggle="toggled(open)">
+                                <a  class="dropdown-toggle"
+                                uib-dropdown-toggle>
+                                   <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-actions">
+                                   <li>
+                                    <a >
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a ng-click="vm.removeCustomerModal()">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                        Remove
+                                    </a>
+                                </li>
+                                
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+    			</tr>
+    		</tbody>
+    	</table>
+
+        <!- -/***********************************************mobile********************************************/- ->
+        <table  class="table table-bordered layout-table mobile">
+            <thead >
+                <div sticky offset=100>
+                <tr >
+                     <th style="width:50px" ng-click="vm.sort('id')">
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="" value="id"  ></u-sort-page-directive>
+                    </th>
+                     <th ng-click="vm.sort('fullName')">
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Full Name" value="fullName"  ></u-sort-page-directive>
+                    </th>
+                    <th style="width:5%"></th>
+                </tr>
+                </div>
+            </thead>
+            <tbody>
+                <tr dir-paginate="datas in vm.data_final|filter:vm.getFullName|orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
+                    <td><img src="{{datas.img}}" /></td>
+                    <td>{{datas.fullName}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
+                     <td>
+                          <ul class="nav navbar-right top-nav">
+                            <li class="dropdown"
+                                uib-dropdown on-toggle="toggled(open)">
+                                <a  class="dropdown-toggle"
+                                uib-dropdown-toggle>
+                                   <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-actions">
+                                   <li>
+                                    <a >
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  >
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                        Remove
+                                    </a>
+                                </li>
+                                
+                                </ul>
+                            </li>
+                        </ul>
+
+                     </td>
+                </tr>
+            </tbody>
+        </table>
+
+      
+
+        <dir-pagination-controls
+                    max-size="10"
+                    direction-links="true"
+                    boundary-links="true" >
+        </dir-pagination-controls>
+
+        -->
+    </div>
+</div>

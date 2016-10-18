@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "treatment_name": "Peel in/Peel Out",
+  },
+  {
+    "id": 2,
+    "treatment_name": "Hypodermic",
+  },
+  {
+    "id": 3,
+    "treatment_name": "Long Hypodermic Lift",
+  },
+  {
+    "id": 4,
+    "treatment_name": "Short Hypodermic Lift",
+  },
+  {
+    "id": 5,
+    "treatment_name": "Eyes Hypodermic list",
+  },
+  {
+    "id": 6,
+    "treatment_name": "Liposomes",
+  },
+  {
+    "id": 7,
+    "treatment_name": "Microbiotic",
+  },
+  {
+    "id": 8,
+    "treatment_name": "New Light",
+  },
+  {
+    "id": 9,
+    "treatment_name": "Peel in/Peel Out",
+  },
+  {
+    "id": 10,
+    "treatment_name": "Techno-spa",
+  }
+]
