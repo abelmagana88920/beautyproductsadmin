@@ -11,7 +11,8 @@
             'sticky',
             //'tableSort',
             'angularUtils.directives.dirPagination',
-            'ngMaterial'
+            'ngMaterial',
+            'angular-toArrayFilter'
             //'hl.sticky'
         ])
         .config(router);
@@ -68,6 +69,34 @@
                 url             : 'customer-profile/:id',  
                 templateUrl     : 'app/components/customer-profile/customer-profile.html',
                 controller      : 'CustomerProfileCtrl',
+                controllerAs    : 'vm'
+            })
+
+            .state('app.treatments', {
+                url             : 'treatment',  
+                templateUrl     : 'app/components/treatment/treatment.html',
+                controller      : 'TreatmentCtrl',
+                controllerAs    : 'vm'
+            })
+            .state('app.treatment', {
+                url             : 'treatment/:id',  
+                templateUrl     : 'app/components/treatment/treatment.html',
+                controller      : 'TreatmentCtrl',
+                controllerAs    : 'vm'
+            })
+
+
+            .state('app.new-customer-profile', {
+                url             : 'new-customer-profile',  
+                templateUrl     : 'app/components/new-customer-profile/new-customer-profile.html',
+                controller      : 'NewCustomerProfileCtrl',
+                controllerAs    : 'vm'
+            })
+
+            .state('app.new-medical-history', {
+                url             : 'new-medical-history',  
+                templateUrl     : 'app/components/new-medical-history/new-medical-history.html',
+                controller      : 'NewMedicalHistoryCtrl',
                 controllerAs    : 'vm'
             })
 

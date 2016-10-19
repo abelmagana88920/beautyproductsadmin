@@ -10,13 +10,14 @@
     function CustomerCtrl($scope, $state, ModalService, QueryService,logger, $uibModalStack,$location) {
         var vm = this;
         
-        vm.titleHeader = 'My Customer';
+        vm.titleHeader = 'My Customers';
        
         vm.sort = sort;
          
         
         vm.customerAndTreatmentModal = customerAndTreatmentModal;
         vm.removeCustomerModal = removeCustomerModal;
+        
         
 
         vm.data = {};

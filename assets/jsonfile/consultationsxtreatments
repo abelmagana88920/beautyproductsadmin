@@ -1,80 +1,80 @@
 [
    {
           "id": 1,
-          "how_many_times": "one month",
-          "how_often": "3x a day",
+          "how_many_times": "3x a day",
+          "how_often": "one month",
           "notes": "Reddening of the skin is observed possibly due to hypersensitivity",
           "consultation_id": 1,
           "treatment_id": 1
    },
     {
           "id": 2,
-          "how_many_times": "one month",
-          "how_often": "3x a day",
+          "how_many_times": "3x a day",
+          "how_often": "one month",
           "notes": "Reddening of the skin is observed possibly due to hypersensitivity",
           "consultation_id": 1,
           "treatment_id": 2
    },
     {
           "id": 3,
-          "how_many_times": "one month",
-          "how_often": "3x a day",
+          "how_many_times": "3x a day",
+          "how_often": "one month",
           "notes": "Reddening of the skin is observed possibly due to hypersensitivity",
           "consultation_id": 1,
           "treatment_id": 3
    },
     {
           "id": 4,
-          "how_many_times": "one month",
-          "how_often": "3x a day",
+          "how_many_times": "3x a day",
+          "how_often": "one month",
           "notes": "Reddening of the skin is observed possibly due to hypersensitivity",
           "consultation_id": 1,
           "treatment_id": 4
    },
     {
           "id": 5,
-          "how_many_times": "one month",
-          "how_often": "3x a day",
+          "how_many_times": "3x a day",
+          "how_often": "one month",
           "notes": "Reddening of the skin is observed possibly due to hypersensitivity",
           "consultation_id": 1,
           "treatment_id": 5
    },
     {
           "id": 6,
-          "how_many_times": "one month",
-          "how_often": "3x a day",
+          "how_many_times": "3x a day",
+          "how_often": "one month",
           "notes": "Reddening of the skin is observed possibly due to hypersensitivity",
           "consultation_id": 2,
           "treatment_id": 1
    },
     {
           "id": 7,
-          "how_many_times": "one month",
-          "how_often": "3x a day",
+          "how_many_times": "3x a day",
+          "how_often": "one month",
           "notes": "Reddening of the skin is observed possibly due to hypersensitivity",
           "consultation_id": 2,
           "treatment_id": 6
    },
     {
           "id": 8,
-          "how_many_times": "one month",
-          "how_often": "3x a day",
+          "how_many_times": "3x a day",
+          "how_often": "one month",
           "notes": "Reddening of the skin is observed possibly due to hypersensitivity",
           "consultation_id": 2,
           "treatment_id": 7
    },
     {
           "id": 9,
-          "how_many_times": "one month",
-          "how_often": "3x a day",
+          "how_many_times": "3x a day",
+          "how_often": "one month",
           "notes": "Reddening of the skin is observed possibly due to hypersensitivity",
           "consultation_id": 2,
           "treatment_id": 8
    },
     {
           "id": 10,
-          "how_many_times": "one month",
-          "how_often": "3x a day",
+          "how_many_times": "3x a day",
+          "how_often": "one month",
           "notes": "Reddening of the skin is observed possibly due to hypersensitivity",
           "consultation_id": 2,
           "treatment_id": 9

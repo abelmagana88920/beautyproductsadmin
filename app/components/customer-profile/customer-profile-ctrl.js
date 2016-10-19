@@ -11,22 +11,23 @@
 
         
         var vm = this;
+        vm.stateParams = $stateParams;
         
-        vm.titleHeader = 'My Customer';
+        vm.titleHeader = 'My Customers';
        
         vm.sort = sort;
         vm.getFullName = getFullName;
         
         vm.customerAndTreatmentModal = customerAndTreatmentModal;
         vm.removeCustomerModal = removeCustomerModal;
-        vm.getTreatmentName = getTreatmentName;
+        vm.getTreatmentObject = getTreatmentObject;
 
         vm.data = {};
         vm.data_final = {};
         vm.consultationtreatment_data = {};
          vm.consultationtreatment_data_final = [];
-        vm.treatment_data = {};
-        vm.treatment_data_filter = {};
+        vm.treatment_data = [];
+        vm.treatment_data_filter = [];
 
 
          vm.pager = {};
@@ -60,11 +61,7 @@
             } */
         }
 
-        function getTreatmentName(objects) {
-             
-            vm.treatment_data_filter = $filter('filter')(vm.treatment_data, {'id':objects.treatment_id},true);  //filter
-            return objects.treatment_name=  vm.treatment_data_filter[0].name;
-        }
+       
 
         function message_modal () {
             var content =  {
@@ -81,6 +78,8 @@
             }
             ModalService.remove_customer_modal(content);
         }
+
+       
 
         /*********************************** Consulatation ********************************/
         (function getPost () {
@@ -156,6 +155,30 @@
                  
            })
         })();
+
+
+        function getTreatmentObject(objects) {
+
+            var initial_value = [{
+                  name: ''  
+            }];
+
+            var selected=false;
+
+             vm.treatment_data_filter = $filter('filter')(vm.treatment_data, {'id':objects.treatment_id},true);  //filter
+            if ( vm.treatment_data_filter.length == 0 ) {
+                    vm.treatment_data_filter = initial_value; 
+                    selected = false;
+                    
+            }  else 
+                 selected = true;
+
+             
+            objects.treatment_name=  vm.treatment_data_filter[0].name;
+            objects.selected=  selected;
+
+            return objects = 1;
+        } 
 
         
     }

@@ -1,0 +1,249 @@
+<div class=""> <!-- col-md-12-->
+    
+   
+    <div style="overflow:hidden;">
+
+        <div sticky offset="50" class="sticky" style="background-color:white">
+            <table style="width:100%">
+                 <tr>
+                    <td style="width:70%"><h5 class="title-header">{{vm.titleHeader}}</h5></td>
+                     
+                     
+
+               </tr>  
+            </table>
+            <div style="padding: 12px;"> </div>
+            
+        </div>
+  
+ <!--{{vm.treatment_data_final}} -->
+      
+       <div class="row form-label ">
+
+             <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top"  >
+                 Are you healthy?
+            </div>
+             <div class="col-md-4 col-xs-3 modal-padding"  >
+                <div  class="flatRoundedCheckbox">
+                    <input  type="checkbox" value="1" id="is_healthy" name="" ng-model="vm.is_healthy">
+                    <label for="is_healthy"></label>
+                    <div></div>
+                </div>
+            </div>
+            
+            <!-- Text Indent   -->   
+            <div ng-show="vm.is_healthy">
+                     <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top text-indent1"  >
+                         Do you smoke?
+                    </div>
+                     <div class="col-md-4 col-xs-3 modal-padding"  >
+                        <div  class="flatRoundedCheckbox">
+                            <input  type="checkbox" value="1" id="is_smoking" name="" ng-model="vm.is_smoking">
+                            <label for="is_smoking"></label>
+                            <div></div>
+                        </div>
+                    </div>  
+
+                     <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top text-indent1"  >
+                         Are you pregnant?
+                    </div>
+                     <div class="col-md-4 col-xs-3 modal-padding"  >
+                        <div  class="flatRoundedCheckbox">
+                            <input  type="checkbox" value="1" id="is_pregnant" name="" ng-model="vm.is_pregnant">
+                            <label for="is_pregnant"></label>
+                            <div></div>
+                        </div>
+                    </div>  
+
+
+                     <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top text-indent1"  >
+                         Do you use Retin A?
+                    </div>
+                     <div class="col-md-4 col-xs-3 modal-padding"  >
+                        <div  class="flatRoundedCheckbox">
+                            <input  type="checkbox" value="1" id="use_retin_a" name="" ng-model="vm.use_retin_a">
+                            <label for="use_retin_a"></label>
+                            <div></div>
+                        </div>
+                    </div> 
+
+                     <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top text-indent1"  >
+                         Do you take Vitamins?
+                    </div>
+                     <div class="col-md-4 col-xs-3 modal-padding"  >
+                        <div  class="flatRoundedCheckbox">
+                            <input  type="checkbox" value="1" id="use_vit" name="" ng-model="vm.use_vit">
+                            <label for="use_vit"></label>
+                            <div></div>
+                        </div>
+                    </div> 
+
+                    <div ng-show="vm.use_vit" style="margin-left:40px">
+                        <div  class="col-md-8 col-xs-9">
+                               <input  class="form-control" 
+                                type="text"
+                                name="use_vit_details"
+                                ng-model="vm.use_vit_details" 
+                                required=""
+                                placeholder="Please Elaborate"
+                                 >
+                        </div>
+                    </div>
+
+
+                     <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top text-indent1"  >
+                         Did you do any professional cosmetic treatment during last 3 months?
+                    </div>
+                     <div class="col-md-4 col-xs-3 modal-padding"  >
+                        <div  class="flatRoundedCheckbox">
+                            <input  type="checkbox" value="1" id="use_pro_treatment" name="" ng-model="vm.use_pro_treatment">
+                            <label for="use_pro_treatment"></label>
+                            <div></div>
+                        </div>
+                    </div> 
+
+
+                    <div ng-show="vm.use_pro_treatment">
+                         <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top text-indent2"  >
+                              Injections   
+                        </div>
+                         <div class="col-md-4 col-xs-3 modal-padding"  >
+                             <div  class="checkboxFive">
+                                  <input type="checkbox"   id="pro_treatment_injection" name="" ng-model="vm.pro_treatment['injections']" />
+                                  <label for="pro_treatment_injection"></label>
+                              </div>
+                        </div> 
+
+
+                         <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top text-indent2"  >
+                              Laser  
+                        </div>
+                         <div class="col-md-4 col-xs-3 modal-padding"  >
+                             <div  class="checkboxFive">
+                                  <input type="checkbox"   id="pro_treatment_laser" name="" ng-model="vm.pro_treatment['laser']" />
+                                  <label for="pro_treatment_laser"></label>
+                              </div>
+                        </div> 
+
+                         <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top text-indent2"  >
+                              Surgical Treatment 
+                        </div>
+                         <div class="col-md-4 col-xs-3 modal-padding"  >
+                             <div  class="checkboxFive">
+                                  <input type="checkbox"   id="pro_treatment_surgical_treatment" name="" ng-model="vm.pro_treatment['surgical_treatment']" />
+                                  <label for="pro_treatment_surgical_treatment"></label>
+                              </div>
+                        </div> 
+
+                         <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top text-indent2"  >
+                              Chemical Peeing
+                        </div>
+                         <div class="col-md-4 col-xs-3 modal-padding"  >
+                             <div  class="checkboxFive">
+                                  <input type="checkbox"   id="pro_treatment_chemical_peeing" name="" ng-model="vm.pro_treatment['chemical_peeing']" />
+                                  <label for="pro_treatment_chemical_peeing"></label>
+                              </div>
+                        </div> 
+
+                         <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top text-indent2"  >
+                              Fat Suction
+                        </div>
+                         <div class="col-md-4 col-xs-3 modal-padding"  >
+                             <div  class="checkboxFive">
+                                  <input type="checkbox"   id="pro_treatment_fat_suction" name="" ng-model="vm.pro_treatment['fat_suction']" />
+                                  <label for="pro_treatment_fat_suction"></label>
+                              </div>
+                        </div> 
+                    </div>
+
+
+                    <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top text-indent1"  >
+                         Are you allergic to anything?
+                    </div>
+                    <div class="col-md-4 col-xs-3 modal-padding"  >
+                        <div  class="flatRoundedCheckbox">
+                            <input  type="checkbox" value="1" id="is_allergic" name="" ng-model="vm.is_allergic">
+                            <label for="is_allergic"></label>
+                            <div></div>
+                        </div>
+                    </div> 
+
+                    <div ng-show="vm.is_allergic">
+                              <div style="margin-left:40px">
+                                <div  class="col-md-8 col-xs-9">
+                                       <input  class="form-control" 
+                                        type="text"
+                                        name="is_allergic_details"
+                                        ng-model="vm.is_allergic_details" 
+                                        required=""
+                                        placeholder="Please Elaborate"
+                                         >
+                                </div>
+                            </div>
+                    </div>
+
+            </div> 
+
+
+            <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top">
+                 Do take any regular medication?
+            </div>
+             <div class="col-md-4 col-xs-3 modal-padding"  >
+                <div  class="flatRoundedCheckbox">
+                    <input type="checkbox" value="1" id="use_medication" name="" ng-model="vm.use_medication">
+                    <label for="use_medication"></label>
+                    <div></div>
+                </div>
+            </div>
+
+             <div ng-show="vm.use_medication">
+                              <div style="margin-left:40px">
+                                <div  class="col-md-8 col-xs-9">
+                                       <input  class="form-control" 
+                                        type="text"
+                                        name="use_medication_details"
+                                        ng-model="vm.use_medication_details" 
+                                        required=""
+                                        placeholder="Please Elaborate"
+                                         >
+                                </div>
+                            </div>
+            </div>
+
+            <div class="ft15 col-md-8 col-xs-9 modal-padding flatui-text-top">
+                 Do you or have you suffered from any of the following:
+                 <div class="ft13" style="margin-left:20px">
+                     Diabetes; Hysterectomy; Epilepsy; Nervous System Problems; Thyroid Imbalance; Heart Problems; Varicose; Blood Pressure; Bell's Palse; Atopic Dermatitis; Psoriasis; Birthmarks; Freckles; Scars; Herpes Conjugation
+                 </div>
+            </div>
+             <div class="col-md-4 col-xs-3 modal-padding"  >
+                <div  class="flatRoundedCheckbox">
+                    <input type="checkbox" value="1" id="disease_suffered" name="" ng-model="vm.disease_suffered">
+                    <label for="disease_suffered"></label>
+                    <div></div>
+                </div>
+            </div>
+
+
+             <div ng-show="vm.disease_suffered">
+                              <div style="margin-left:40px">
+                                <div  class="col-md-8 col-xs-9">
+                                       <input  class="form-control" 
+                                        type="text"
+                                        name="disease_suffered"
+                                        ng-model="disease_suffered" 
+                                        required=""
+                                        placeholder="Please Elaborate"
+                                         >
+                                </div>
+                            </div>
+            </div>
+      </div>
+
+      
+         
+         
+
+      
+    </div>
+</div>

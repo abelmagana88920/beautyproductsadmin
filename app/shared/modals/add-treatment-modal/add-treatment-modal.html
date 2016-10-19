@@ -1,0 +1,38 @@
+<div class="modal-header bg-primary shufra-blue-primary">
+    <span class="text-uppercase lead">
+        {{ vm.content.header }}
+       <button  type="button" 
+                class="close"
+                ng-click="vm.cancel()" 
+                data-dismiss="modal" 
+                aria-hidden="true">&times;</button>
+    </span>
+
+</div>
+ 
+<div class="modal-body clearfix" >
+  
+    <div class="col-md-12 modal-padding" >
+        <input  class="form-control" 
+                type="text"
+                name="treatment_name"
+                ng-model="vm.treatment_name" 
+                required=""
+                placeholder="Treatment Name"
+                 >
+    </div>
+     
+  
+
+
+
+
+    <div class="top-margin-sm pull-right" align="center">
+        <button type="button" 
+                class="btn btn-sm btn-cancel" 
+                ng-click="vm.cancel()" > Cancel </button>
+        <button type="button"
+                class="btn btn-sm btn-primary text-capitalize"
+                ng-click="vm.approve()" > {{vm.content.btn_name || 'Confirm'}} </button>
+    </div>
+</div>

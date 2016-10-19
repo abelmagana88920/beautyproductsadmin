@@ -15,6 +15,7 @@
                     <p>Reverse: {{vm.reverse}}</p>
                     <p>Search String : {{search}}</p>
     </div>   -->
+     
 
     <div class="customer-treatment-opacity" ng-show="vm.addCTOptionFReverse">
         
@@ -26,7 +27,7 @@
                   </span>
         </div>
 
-        <div class="customer-class"  ng-show="vm.addCTOptionFReverse">
+        <div ui-sref="app.new-customer-profile" class="customer-class"  ng-show="vm.addCTOptionFReverse">
                 <div class="label"> Add Customer </div>
                   <span>
                     <i class="fa fa-1x fa-users" aria-hidden="true"></i>
@@ -42,8 +43,8 @@
             </span>
       
     </div>
+ 
 
-   
     <div class="table-responsive">
 
         <div sticky offset="50" class="sticky" style="background-color:white">

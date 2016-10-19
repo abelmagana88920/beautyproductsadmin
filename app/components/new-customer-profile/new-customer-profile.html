@@ -1,0 +1,132 @@
+<div class=""> <!-- col-md-12-->
+    
+    <div class="customer-and-treatment-modal-class">
+         
+            <span ng-click="vm.addTreatmentModal()">
+                <b>+</b>
+            </span>
+      
+    </div>
+
+   
+    <div class="table-responsive">
+
+        <div sticky offset="50" class="sticky" style="background-color:white">
+            <table style="width:100%">
+                 <tr>
+                    <td style="width:70%"><h5 class="title-header">{{vm.titleHeader}}</h5></td>
+                     
+                     
+
+               </tr>  
+            </table>
+            <div style="padding: 12px;"> </div>
+            
+        </div>
+  
+ <!--{{vm.treatment_data_final}} -->
+      <div class="form-label">
+             <div class="col-md-12 modal-padding" >
+                <input  class="form-control" 
+                        type="text"
+                        name="first_name"
+                        ng-model="vm.first_name" 
+                        required=""
+                         
+                         >
+                <label class="md-label">First Name</label>
+            </div>
+             
+            <div class="col-md-12 modal-padding"  >
+                <input  class="form-control" 
+                        type="text"
+                        name="last_name"
+                        ng-model="vm.last_name" 
+                      
+                        required="">
+                <label class="md-label">Last Name</label>
+               
+            </div>
+
+             <div class="col-md-12 modal-padding">
+                <select  class="form-control"             
+                        name="gender"
+                        ng-model="vm.gender" 
+                        required="">
+                        <option value="" selected> </option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                </select>
+                 <label class="md-label">Select Gender</label>
+               
+            </div>
+             
+            <div class="col-md-12 modal-padding">
+                <input  class="form-control" 
+                        type="text"
+                        name="email"
+                        ng-model="vm.email" 
+                        
+                        required="">
+                 <label class="md-label">Email</label>
+               
+            </div>
+
+             <div class="col-md-12 modal-padding">
+                <input  class="form-control" 
+                        type="text"
+                        name="address"
+                        ng-model="vm.address" 
+                        
+                        required="">
+                 <label class="md-label">Address</label>
+            </div>
+
+             <div class="col-md-12 modal-padding">
+                <input  class="form-control" 
+                        type="text"
+                        name="city"
+                        ng-model="vm.city" 
+                         
+                        required="">
+                 <label class="md-label">City</label>
+            </div>
+
+             <div class="col-md-12 modal-padding">
+                <input  class="form-control" 
+                        type="text"
+                        name="birthdate"
+                        ng-model="vm.birthdate" 
+                         
+                        required="">
+                <label class="md-label">Birthday</label>
+            </div>
+
+           
+
+             <div class="col-md-12 modal-padding">
+                <input  class="form-control" 
+                        type="text"
+                        name="phone_1"
+                        ng-model="vm.phone_1" 
+                        
+                        required="">
+                 <label class="md-label">Phone 1</label>
+               
+            </div>
+
+            <div class="col-md-12 modal-padding">
+                <input  class="form-control" 
+                        type="text"
+                        name="phone_2"
+                        ng-model="vm.phone_2" 
+                      
+                        required="">
+                 <label class="md-label">Phone 2 (Optional)</label>
+            </div>
+          
+      </div>
+
+      
+    </div>
+</div>

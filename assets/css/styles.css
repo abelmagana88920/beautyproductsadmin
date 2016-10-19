@@ -289,7 +289,7 @@ a {
     margin-right:10px;
 }
 .content-view {
-    margin-top:-43px;
+    margin-top:-55px;
     padding: 10px;
 }
 #wrapper {
@@ -462,7 +462,7 @@ a {
     .sticky {
         margin:0px;
         box-shadow: 0 4px 2px -2px gray;
-        z-index: 1700 !important;
+        z-index: 200 !important;
     }
 
     md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
@@ -502,8 +502,16 @@ a {
 
     input.form-control   {
      /* width:300px; */
-     width:90%;
+     /*width:90%; */
+      width:90%;
       
+     display:inherit;
+    }
+
+     select.form-control   {
+     /* width:300px; */
+     /*width:90%; */
+      width:90%;
       
      display:inherit;
     }
@@ -829,9 +837,42 @@ img {
     background-size:cover;
 }
 
-   
-  
+.modal-padding {
+    padding-top:15px;
+}
 
+   
+
+.form-label .form-control:focus ~ label, .form-label .form-control:valid ~ label {
+    top: 1px;
+    font-size: 14px;
+}
+
+.form-label label {
+    color: #999;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    left: 16px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.flatui-text-top {
+    margin-top:9px;
+}
+
+.text-indent1 {
+    text-indent:20px;
+}
+.text-indent2 {
+    text-indent:40px;
+}
+
+
+
+ 
 
   
 

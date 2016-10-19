@@ -18,7 +18,7 @@
 
    
     <div class="customer-and-treatment-modal-class" ng-show="tab===2 || tab===3">
-            <span ng-click="vm.customerAndTreatmentModal()">
+            <span ui-sref="app.treatment({id:vm.stateParams.id})">
                 <b>+</b> 
             </span>
       
@@ -51,8 +51,8 @@
             <div class="ft9">
               Last Visited: {{vm.data_final[0].lastvisited}}
             </div>
-
-
+       
+            
 
             <div ng-init="tab = 1" class="Row tab menu">
                  <div style="white-space: nowrap" nowrap class="Column" ng-class="{active:tab===1}">
@@ -112,16 +112,22 @@
                    </table>
            </div>
  
-
+ 
            <div ng-show="tab === 3"> 
 
                   <table  class="table table-bordered layout-table">
       
                     <tbody>
-                        <tr ng-repeat="datas in vm.consultationtreatment_data_final | filter: vm.getTreatmentName"  >
-                            <td><img src="{{datas.img}}" /></td>
-                            <td>{{datas.treatment_name}}   <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
-                             <td>
+                        <tr ng-repeat="datas in vm.consultationtreatment_data_final | toArray:false |  filter: vm.getTreatmentObject"  >
+                             <td style="width: 5%;">
+                              <div  class="checkboxFour">
+          
+                                <input type="checkbox" ng-checked="datas.selected" value="1" id="{{'checkboxInput' + datas.id}}" name="" />
+                                <label for="{{'checkboxInput' + datas.id}}"></label>
+                              </div>
+                            </td>
+                            <td style="width: 90%;">{{datas.treatment_name}}   <br> <span class="ft9"> {{datas.how_many_times}} every {{datas.how_often}} </span></td>
+                             <td style="width:5%;">
                                   <ul class="nav navbar-right top-nav">
                                     <li class="dropdown"
                                         uib-dropdown on-toggle="toggled(open)">

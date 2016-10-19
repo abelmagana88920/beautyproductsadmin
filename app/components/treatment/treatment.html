@@ -1,0 +1,82 @@
+<div class=""> <!-- col-md-12-->
+    
+    <div class="customer-and-treatment-modal-class">
+         
+            <span ng-click="vm.addTreatmentModal()">
+                <b>+</b>
+            </span>
+      
+    </div>
+
+   
+    <div class="table-responsive">
+
+        <div sticky offset="50" class="sticky" style="background-color:white">
+            <table style="width:100%">
+                 <tr>
+                    <td style="width:70%"><h5 class="title-header">{{vm.titleHeader}}</h5></td>
+                     
+                     
+
+               </tr>  
+            </table>
+            <div style="padding: 12px;"> </div>
+            
+        </div>
+  
+ <!--{{vm.treatment_data_final}} -->
+      
+        <table  class="table table-bordered layout-table">
+             
+            <tbody>
+                <tr ng-repeat="datas in vm.treatment_data_final | toArray:false | filter : vm.getConsultationTreatmentObject"  >
+                    <td style="width: 5%;">
+                      <div  class="checkboxFour">
+  
+                        <input type="checkbox" ng-checked="datas.selected" value="1" id="{{'checkboxInput' + datas.id}}" name="" />
+                        <label for="{{'checkboxInput' + datas.id}}"></label>
+                      </div>
+                    </td>
+                    <td  style="width: 90%;" ng-click="vm.consultationTreatmentDetailsModal(datas)">{{datas.name}} <br> 
+                   
+                       <span class="ft9" ng-show="{{datas.selected}}"> {{datas.how_many_times}} every
+                        {{datas.how_often}} 
+                      </span>
+                      <span class="ft9" ng-show="{{!datas.selected}}"> Not Applicable
+                      </span>
+
+                    </td style="width: 5%;">
+                     <td>
+                          <ul class="nav navbar-right top-nav">
+                            <li class="dropdown"
+                                uib-dropdown on-toggle="toggled(open)">
+                                <a  class="dropdown-toggle"
+                                uib-dropdown-toggle>
+                                   <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-actions">
+                                   <li>
+                                    <a >
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  ng-click="vm.removeCustomerModal()">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                        Remove
+                                    </a>
+                                </li>
+                                
+                                </ul>
+                            </li>
+                        </ul>
+
+                     </td>
+                </tr>
+            </tbody>
+        </table>
+
+      
+    </div>
+</div>

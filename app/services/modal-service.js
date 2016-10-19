@@ -15,7 +15,9 @@
             email_modal:   email_modal,
             message_modal: message_modal,
             customer_and_treatment_modal: customer_and_treatment_modal,
-            remove_customer_modal: remove_customer_modal
+            remove_customer_modal: remove_customer_modal,
+            consultation_treatment_details_modal : consultation_treatment_details_modal,
+            add_treatment_modal: add_treatment_modal
         };
 
         return service;
@@ -145,6 +147,38 @@
             var modalInstance = $uibModal.open({
                 'templateUrl'   : 'app/shared/modals/remove-customer-modal/remove-customer-modal.html',
                 'controller'    : 'RemoveCustomerModalCtrl',
+                'controllerAs'  : 'vm',
+                /*'windowClass'   : "customer-and-treatment-modal-class", */
+                'size'          : 'sm',
+                'backdrop'      : false,
+                'resolve'       : {
+                    message     : function () {
+                        return msg;
+                    }
+                }
+            });
+        }
+
+         function consultation_treatment_details_modal(msg) {
+            var modalInstance = $uibModal.open({
+                'templateUrl'   : 'app/shared/modals/consultation-treatment-details-modal/consultation-treatment-details-modal.html',
+                'controller'    : 'ConsultationTreatmentDetailsModalCtrl',
+                'controllerAs'  : 'vm',
+                /*'windowClass'   : "customer-and-treatment-modal-class", */
+                'size'          : 'sm',
+                'backdrop'      : false,
+                'resolve'       : {
+                    message     : function () {
+                        return msg;
+                    }
+                }
+            });
+        }
+
+        function add_treatment_modal(msg) {
+            var modalInstance = $uibModal.open({
+                'templateUrl'   : 'app/shared/modals/add-treatment-modal/add-treatment-modal.html',
+                'controller'    : 'AddTreatmentModalCtrl',
                 'controllerAs'  : 'vm',
                 /*'windowClass'   : "customer-and-treatment-modal-class", */
                 'size'          : 'sm',
