@@ -100,6 +100,13 @@
                 controllerAs    : 'vm'
             })
 
+            .state('app.new-diagnosis', {
+                url             : 'new-diagnosis',  
+                templateUrl     : 'app/components/new-diagnosis/new-diagnosis.html',
+                controller      : 'NewDiagnosisCtrl',
+                controllerAs    : 'vm'
+            })
+
             .state('app.account', {
                 url             : 'dashboard',  
                 templateUrl     : 'app/components/dashboard/dashboard.html',
@@ -111,6 +118,13 @@
                 url             : 'material',  
                 templateUrl     : 'app/components/material/index.html',
                 controller      : 'myAppController',
+                controllerAs    : 'vm'
+            })
+
+            .state('app.user', {
+                url             : 'users',  
+                templateUrl     : 'app/components/user/user.html',
+                controller      : 'UserCtrl',
                 controllerAs    : 'vm'
             })
 

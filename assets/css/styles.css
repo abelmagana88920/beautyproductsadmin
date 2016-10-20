@@ -578,6 +578,15 @@ a {
         font-size:20px !important;
     }
 
+    .circle {
+      width: 25px;
+      height: 25px;
+      background: #01A3D4;
+      -moz-border-radius: 50px;
+      -webkit-border-radius: 50px;
+      border-radius: 50px;
+    }
+
     .customer-class {
         bottom: 105px;
         right: 40px;

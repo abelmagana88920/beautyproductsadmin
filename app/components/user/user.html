@@ -1,0 +1,207 @@
+<div class=""> <!-- col-md-12-->
+    
+   <!-- Hello World!
+
+<div class="shufra-blue-primary">
+    <p class="text-white">Hello World!</p>
+</div>
+    <button class="btn btn-primary"
+    		ng-click="vm.message_modal()">
+    	Modal {{orderProperty}}
+    </button> -->
+    <!--
+    <div class="alert alert-info">
+                    <p>Sort key: {{vm.sortKey}}</p>
+                    <p>Reverse: {{vm.reverse}}</p>
+                    <p>Search String : {{search}}</p>
+    </div>   -->
+     
+
+    <div class="customer-treatment-opacity" ng-show="vm.addCTOptionFReverse">
+        
+    </div>
+     <div class="treatment-class" ng-show="vm.addCTOptionFReverse">
+                  <div class="label"> Add Treatment </div>
+                  <span>
+                    <i class="fa fa-1x fa-users" aria-hidden="true"></i>
+                  </span>
+        </div>
+
+        <div ui-sref="app.new-customer-profile" class="customer-class"  ng-show="vm.addCTOptionFReverse">
+                <div class="label"> Add Customer </div>
+                  <span>
+                    <i class="fa fa-1x fa-users" aria-hidden="true"></i>
+                  </span>
+    </div>
+
+
+    <div class="customer-and-treatment-modal-class">
+         
+            <span ng-click="vm.customerAndTreatmentModal()">
+                <b ng-show="!vm.addCTOptionFReverse">+</b>
+                <b ng-show="vm.addCTOptionFReverse">x</b>
+            </span>
+      
+    </div>
+ 
+
+    <div class="table-responsive">
+
+        <div sticky offset="50" class="sticky" style="background-color:white">
+            <table style="width:100%">
+                 <tr>
+                    <td style="width:70%"><h5 class="title-header">{{vm.titleHeader}}</h5></td>
+                     
+                    <td style="width:30%" valign=middle align=right>
+                         <div style="width: 75px"> 
+                                <div class="oval" style="float:left"><span>10</span></div> <i class="fa fa-2x fa-cog" aria-hidden="true"></i> 
+                         </div>  
+                     </td> 
+
+               </tr>  
+            </table>
+            <table style="width:100%">
+               <tr>
+                    <td nowrap style="width:80%" class="search-control"  ng-class = "!pageCollapsed && 'in'">
+                        <label><i class="fa fa-search" aria-hidden="true"></i>
+                             <input class="form-control"  type="text" ng-model="search.$" placeholder="Search here" required> 
+                             <i class="fa fa-times-thin" ng-click="search=''"></i>
+                        </label>
+                    </td>
+                    <td style="width:10%"  align=right>
+                                <a class = "visible-xs"  
+                                        ng-init = "pageCollapsed = true" 
+                                        ng-click = "pageCollapsed = !pageCollapsed" >
+                                        <span>
+                                            <i class = "fa fa-bars fa-lg" ></i>
+                                        </span>
+                                </a>
+                           
+                     </td>
+               </tr>
+               <tr>
+                    <td colspan=2>
+                         <dir-pagination-controls class="page-sticky" ng-class = "!pageCollapsed && 'in'" max-size="10" direction-links="true" boundary-links="true" ></dir-pagination-controls> 
+                    </td>
+               </tr> 
+            </table>
+            
+        </div>
+
+
+        <!--  /***********************************************desktop********************************************/-->
+    	<table  class="table table-bordered layout-table desktop">
+    		<thead >
+                <div sticky offset=100>
+    			<tr >
+                     <!--<th style="width:50px" ng-click="sort('id')">
+                        <u-sort-page-directive sort-key="{{sortKey}}" reverse="{{reverse}}" label="ID" value="id"  ></u-sort-page-directive>
+                    </th> -->
+                    <th style="width:5%">   </th>
+                     <th style="width:15%" ng-click="vm.sort('fullname')">
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Name" value="fullname"  ></u-sort-page-directive>
+                    </th>
+                    <th style="width:10%" ng-click="vm.sort('email')"> 
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Email" value="email"  ></u-sort-page-directive> 
+                    </th>
+                     <th style="width:15%" ng-click="vm.sort('address')"> 
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Address" value="address"  ></u-sort-page-directive> 
+                    </th>
+                     <th style="width:5%"></th>
+    			</tr>
+                </div>
+    		</thead>
+    		<tbody>
+    			<tr   dir-paginate="datas in vm.data_final| toArray:false | filter: vm.getFullName |orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
+    				<!--<td ng-bind="datas.id"></td> -->
+                    <td class="image-cropper" ui-sref="app.customer-profile({id:datas.id})"><img class="rounded img-fluid"  src="{{datas.face_front}}" /></td>
+                    <td   ui-sref="app.customer-profile({id:datas.id})" valign="middle">{{datas.fullname}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
+                     <td ng-bind="datas.email"> /></td>
+                     <td ng-bind="datas.address"> /></td>
+                    <td> 
+                          <ul class="nav navbar-right top-nav">
+                            <li class="dropdown"
+                                uib-dropdown on-toggle="toggled(open)">
+                                <a  class="dropdown-toggle"
+                                uib-dropdown-toggle>
+                                   <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-actions">
+                                   <li>
+                                    <a >
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a ng-click="vm.removeCustomerModal()">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                        Remove
+                                    </a>
+                                </li>
+                                
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+    			</tr>
+    		</tbody>
+    	</table>
+
+        <!--/***********************************************mobile********************************************/-->
+        <table  class="table table-bordered layout-table mobile">
+            <thead >
+                <div sticky offset=100>
+                <tr >
+                     <th style="width:70px" ng-click="vm.sort('id')">
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="" value="id"  ></u-sort-page-directive>
+                    </th>
+                     <th ng-click="vm.sort('name')">
+                        <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Name" value="name"  ></u-sort-page-directive>
+                    </th>
+                    <th style="width:5%"></th>
+                </tr>
+                </div>
+            </thead>
+            <tbody>
+                <tr dir-paginate="datas in vm.data_final|orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
+                    <td class="image-cropper" ui-sref="app.customer-profile({id:datas.id})"><img class="rounded img-fluid"  src="{{datas.face_front}}" /></td>
+                    <td   ui-sref="app.customer-profile({id:datas.id})">{{datas.name}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
+                     <td>
+                          <ul class="nav navbar-right top-nav">
+                            <li class="dropdown"
+                                uib-dropdown on-toggle="toggled(open)">
+                                <a  class="dropdown-toggle"
+                                uib-dropdown-toggle>
+                                   <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-actions">
+                                   <li>
+                                    <a >
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a  ng-click="vm.removeCustomerModal()">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                        Remove
+                                    </a>
+                                </li>
+                                
+                                </ul>
+                            </li>
+                        </ul>
+
+                     </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <dir-pagination-controls
+                    max-size="10"
+                    direction-links="true"
+                    boundary-links="true" >
+        </dir-pagination-controls>
+    </div>
+</div>
