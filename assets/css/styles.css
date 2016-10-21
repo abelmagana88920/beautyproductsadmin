@@ -831,6 +831,7 @@ img {
     height: auto;
     position: relative;
     overflow: hidden;
+
 }
 .rounded {
     display: block;
@@ -844,6 +845,7 @@ img {
     border-radius: 50%;
    
     background-size:cover;
+    box-shadow: 0 0 2px 1px #aaa;
 }
 
 .modal-padding {
@@ -877,6 +879,20 @@ img {
 }
 .text-indent2 {
     text-indent:40px;
+}
+
+
+span.error {
+  color: #ff0000;
+}
+
+
+.btn-active {
+    background-color: #01A3D4 !important;
+}
+
+.btn-deactive {
+    background-color: #cc2233 !important;
 }
 
 

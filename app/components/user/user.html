@@ -20,26 +20,14 @@
     <div class="customer-treatment-opacity" ng-show="vm.addCTOptionFReverse">
         
     </div>
-     <div class="treatment-class" ng-show="vm.addCTOptionFReverse">
-                  <div class="label"> Add Treatment </div>
-                  <span>
-                    <i class="fa fa-1x fa-users" aria-hidden="true"></i>
-                  </span>
-        </div>
-
-        <div ui-sref="app.new-customer-profile" class="customer-class"  ng-show="vm.addCTOptionFReverse">
-                <div class="label"> Add Customer </div>
-                  <span>
-                    <i class="fa fa-1x fa-users" aria-hidden="true"></i>
-                  </span>
-    </div>
+   
 
 
     <div class="customer-and-treatment-modal-class">
          
-            <span ng-click="vm.customerAndTreatmentModal()">
-                <b ng-show="!vm.addCTOptionFReverse">+</b>
-                <b ng-show="vm.addCTOptionFReverse">x</b>
+            <span ng-click="vm.newUserProfileModal()">
+                <b>+</b>
+                 
             </span>
       
     </div>
@@ -104,20 +92,31 @@
                     <th style="width:10%" ng-click="vm.sort('email')"> 
                         <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Email" value="email"  ></u-sort-page-directive> 
                     </th>
-                     <th style="width:15%" ng-click="vm.sort('address')"> 
+                     <th style="width:25%" ng-click="vm.sort('address')"> 
                         <u-sort-page-directive sort-key="{{vm.sortKey}}" reverse="{{vm.reverse}}" label="Address" value="address"  ></u-sort-page-directive> 
                     </th>
+                    <th style="width:5%">Status</th>
                      <th style="width:5%"></th>
     			</tr>
                 </div>
     		</thead>
     		<tbody>
-    			<tr   dir-paginate="datas in vm.data_final| toArray:false | filter: vm.getFullName |orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
+    			<tr   dir-paginate="datas in vm.data_final| toArray:false | filter: vm.getObjects |orderBy:vm.sortKey:vm.reverse|filter:search|itemsPerPage:10"  >
     				<!--<td ng-bind="datas.id"></td> -->
-                    <td class="image-cropper" ui-sref="app.customer-profile({id:datas.id})"><img class="rounded img-fluid"  src="{{datas.face_front}}" /></td>
-                    <td   ui-sref="app.customer-profile({id:datas.id})" valign="middle">{{datas.fullname}} <br> <span class="superscript"> last visited: {{datas.lastvisited}} </span></td>
+                    <td class="image-cropper" ui-sref="app.user-profile({id:datas.id})"><img class="rounded img-fluid"  src="{{datas.image_url}}" /></td>
+                    <td   ui-sref="app.user-profile({id:datas.id})" valign="middle">{{datas.fullname}} </td>
                      <td ng-bind="datas.email"> /></td>
                      <td ng-bind="datas.address"> /></td>
+                     <td ng-init="vm.isActiveItem[$index] = datas.is_active == '1'"> <button type="button"  
+                          class="btn btn-primary  btn-sm text-capitalize"
+                          ng-click="vm.activateBlock($index, datas.is_active)"  ng-class="{'btn-active':vm.isActiveItem[$index],'btn-deactive':!vm.isActiveItem[$index]}" >  {{datas.activate_text[$index]}}
+                           </button>
+ 
+
+
+                         </td>
+
+                         
                     <td> 
                           <ul class="nav navbar-right top-nav">
                             <li class="dropdown"
@@ -128,13 +127,13 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-actions">
                                    <li>
-                                    <a >
+                                    <a ng-click="vm.updateUserProfileModal(datas.id)">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         Edit
                                     </a>
                                 </li>
                                 <li>
-                                    <a ng-click="vm.removeCustomerModal()">
+                                    <a ng-click="vm.removeUserProfileModal()">
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                         Remove
                                     </a>

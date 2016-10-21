@@ -10,37 +10,48 @@
     function UserCtrl($scope, $state, ModalService, QueryService,logger, $uibModalStack,$location) {
         var vm = this;
         
-        vm.titleHeader = 'Users';
+        vm.titleHeader = 'Beautician Users';
        
         vm.sort = sort;
-         
+        
         
         vm.customerAndTreatmentModal = customerAndTreatmentModal;
-        vm.removeCustomerModal = removeCustomerModal;
-        vm.getFullName = getFullName;
-
-
-        
+       
+        vm.getObjects = getObjects;
+        vm.newUserProfileModal = newUserProfileModal;
+        vm.updateUserProfileModal =updateUserProfileModal;
+        vm.removeUserProfileModal =removeUserProfileModal;
+        vm.activateBlock = activateBlock;
 
         vm.data = {};
         vm.data_filter = [];
 
+        vm.isActiveItem = [];
 
-         vm.pager = {};
+
+        vm.pager = {};
+
+
       
         function initController() {
               
         }
 
 
-       
-
         function sort(keyname){
             vm.sortKey = keyname;   //set the sortKey to the param passed
             vm.reverse = !vm.reverse; //if true make it false and vice versa
         }
         
-        
+        function activateBlock($index, is_active) {
+             var active_block = '';
+            
+             vm.isActiveItem[$index] = !vm.isActiveItem[$index];
+             if (vm.isActiveItem[$index]) active_block='1';
+             else active_block='0';
+
+             vm.data_final[$index].is_active=active_block;
+        }
 
        
 
@@ -56,6 +67,25 @@
             } */
         }
 
+        function newUserProfileModal() {
+            var content =  {
+                header:'Add Beautician User',
+                action:'add',
+                message:''
+            }
+            ModalService.user_profile_modal(content);
+        }
+
+        function updateUserProfileModal(id) {
+            var content =  {
+                header:'Update Beautician User',
+                action:'update',
+                id: id,
+                message:''
+            }
+            ModalService.user_profile_modal(content);
+        }
+
          
 
         function message_modal () {
@@ -66,12 +96,12 @@
             ModalService.confirm_modal(content);
         }
 
-        function removeCustomerModal() {
+        function removeUserProfileModal() {
             var content =  {
-                header:'Remove Customer',
-                message:'Are you sure you want to remove this customer?'
+                header:'Remove User',
+                message:'Are you sure you want to remove this user?'
             }
-            ModalService.remove_customer_modal(content);
+            ModalService.confirm_modal(content);
         }
 
         (function getPost () {
@@ -95,8 +125,12 @@
         })();
 
 
-        function getFullName(objects) {
+        function getObjects(objects,index) {
+            objects.activate_text = [];
+
             objects.fullname=  objects.firstname + ' ' + objects.lastname;
+            if (objects.is_active == "1") objects.activate_text[index]= "Actived";
+            else if (objects.is_active == "0") objects.activate_text[index] = "Blocked";
             return objects = 1;
         } 
     }

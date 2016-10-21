@@ -12,7 +12,8 @@
             //'tableSort',
             'angularUtils.directives.dirPagination',
             'ngMaterial',
-            'angular-toArrayFilter'
+            'angular-toArrayFilter',
+            'naif.base64'
             //'hl.sticky'
         ])
         .config(router);
@@ -121,10 +122,17 @@
                 controllerAs    : 'vm'
             })
 
-            .state('app.user', {
+            .state('app.users', {
                 url             : 'users',  
                 templateUrl     : 'app/components/user/user.html',
                 controller      : 'UserCtrl',
+                controllerAs    : 'vm'
+            })
+
+            .state('app.user-profile', {
+                url             : 'user-profile/:id',  
+                templateUrl     : 'app/components/user-profile/user-profile.html',
+                controller      : 'UserProfileCtrl',
                 controllerAs    : 'vm'
             })
 

@@ -17,7 +17,8 @@
             customer_and_treatment_modal: customer_and_treatment_modal,
             remove_customer_modal: remove_customer_modal,
             consultation_treatment_details_modal : consultation_treatment_details_modal,
-            add_treatment_modal: add_treatment_modal
+            add_treatment_modal: add_treatment_modal,
+            user_profile_modal: user_profile_modal
         };
 
         return service;
@@ -182,6 +183,23 @@
                 'controllerAs'  : 'vm',
                 /*'windowClass'   : "customer-and-treatment-modal-class", */
                 'size'          : 'sm',
+                'backdrop'      : false,
+                'resolve'       : {
+                    message     : function () {
+                        return msg;
+                    }
+                }
+            });
+        }
+
+
+        function user_profile_modal(msg) {
+            var modalInstance = $uibModal.open({
+                'templateUrl'   : 'app/shared/modals/user-profile-modal/user-profile-modal.html',
+                'controller'    : 'UserProfileModalCtrl',
+                'controllerAs'  : 'vm',
+                /*'windowClass'   : "customer-and-treatment-modal-class", */
+                'size'          : 'md',
                 'backdrop'      : false,
                 'resolve'       : {
                     message     : function () {

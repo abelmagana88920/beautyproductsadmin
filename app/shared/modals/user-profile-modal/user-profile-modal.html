@@ -1,0 +1,164 @@
+<div class="modal-header bg-primary shufra-blue-primary">
+    <span class="text-uppercase lead">
+        {{ vm.content.header }}  
+               <button  type="button" 
+                class="close"
+                ng-click="vm.cancel()" 
+                data-dismiss="modal" 
+                aria-hidden="true">&times;</button>
+    </span>
+
+</div>
+ 
+
+<div class="modal-body clearfix" >
+    <form name="formUserProfile" novalidate>
+        <div class="col-md-12 modal-padding" >
+            <span ng-show="!formUserProfile.firstname.$error.required">First Name</span>
+            <input  class="form-control" 
+                    type="text"
+                    name="firstname"
+                    ng-model="vm.data_filter[0].firstname" 
+                    required=""
+                    placeholder="First Name"
+
+                     >
+            <span class="ft9 error" ng-show="vm.submitted && formUserProfile.firstname.$error.required">(Required!)</span>  
+        </div>
+         
+        <div class="col-md-12 modal-padding" >
+            <span ng-show="!formUserProfile.lastname.$error.required">Last Name</span>
+            <input  class="form-control" 
+                    type="text"
+                    name="lastname"
+                    ng-model="vm.data_filter[0].lastname" 
+                    required=""
+                    placeholder="Last Name"
+                     >
+            <span class="ft9 error" ng-show="vm.submitted && formUserProfile.lastname.$error.required">(Required!)</span>  
+        </div>
+
+        <div class="col-md-12 modal-padding" >
+            <span ng-show="!formUserProfile.email.$error.required">Email</span>
+            <input  class="form-control" 
+                    type="text"
+                    name="email"
+                    ng-model="vm.data_filter[0].email" 
+                    required=""
+                    placeholder="Email"
+                     >
+            <span class="ft9 error" ng-show="vm.submitted && formUserProfile.email.$error.required">(Required!)</span>  
+        </div>
+
+         <div class="col-md-12 modal-padding" >
+            <span ng-show="!formUserProfile.password.$error.required">Password</span>
+            <input  class="form-control" 
+                    type="password"
+                    name="password"
+                    ng-model="vm.data_filter[0].password" 
+                    required=""
+                    placeholder="Password"
+                     >
+            <span class="ft9 error" ng-show="vm.submitted && formUserProfile.password.$error.required">(Required!)</span> 
+        </div>
+
+         <div class="col-md-12 modal-padding" >
+            <span ng-show="!formUserProfile.gender.$error.required">Gender</span>
+            <select class="form-control" name="gender"
+                    ng-model="vm.data_filter[0].gender"
+                    required=""
+            >
+                <option ng-selected="true" value="">Please Select Gender...</option>
+                <option value="male">{{'male' | titleCase}}</option>
+                <option value="female">{{'female' | titleCase}}</option>
+            </select>
+             <span class="ft9 error" ng-show="vm.submitted && formUserProfile.gender.$error.required">(Required!)</span>  
+
+        </div>
+
+         <div class="col-md-12 modal-padding" >
+            <span ng-show="!formUserProfile.address.$error.required">Resident Address</span>
+            <textarea  class="form-control" 
+                    name="address"
+                    ng-model="vm.data_filter[0].address" 
+                    required=""
+                    placeholder="Resident Address"
+                     > </textarea>
+             <span class="ft9 error" ng-show="vm.submitted && formUserProfile.address.$error.required">(Required!)</span>  
+        </div>
+
+        <div class="col-md-12 modal-padding" >
+            <span ng-show="!formUserProfile.phone_1.$error.required">Phone 1</span>
+            <input  class="form-control" 
+                    type="text"
+                    name="phone_1"
+                    ng-model="vm.data_filter[0].phone_1" 
+                    required=""
+                    placeholder="Phone 1"
+                     >
+             <span class="ft9 error" ng-show="vm.submitted && formUserProfile.phone_1.$error.required">(Required!)</span>  
+        </div>
+
+         <div class="col-md-12 modal-padding" >
+            <span ng-show="!formUserProfile.phone_2.$error.required && formUserProfile.phone_2.$touched">Phone 2</span>
+            <input  class="form-control" 
+                    type="text"
+                    name="phone_2"
+                    ng-model="vm.data_filter[0].phone_2" 
+                    placeholder="Phone 2"
+                     >
+        </div>
+
+        <div class="col-md-12 modal-padding" >
+            <span ng-show="!formUserProfile.role.$error.required">Role</span>
+            <select class="form-control" name="role"
+                    ng-model="vm.data_filter[0].role"
+                    required=""
+            >
+                <option ng-selected="true" value="">Please Select Role...</option>
+                <option value="beautician">{{'beautician' | titleCase}}</option>
+                
+            </select>
+             <span class="ft9 error" ng-show="vm.submitted && formUserProfile.role.$error.required">(Required!)</span>  
+
+        </div>
+
+
+        <div class="col-md-12 modal-padding" >
+            <span ng-show="!formUserProfile.files.$error.required">Image</span>
+            <input  class="form-control" 
+                    type="file"
+                    name="files"
+                    ng-model="vm.data_filter[0].files" 
+                    required=""
+                    placeholder="Image"
+                    base-sixty-four-input
+                    accept="image/*"
+                     >
+             <span class="ft9 error" ng-show="vm.submitted && formUserProfile.files.$error.required && vm.content.action == 'add'">(Required!)</span>  
+        </div>
+
+        <div class="col-md-12 modal-padding" >
+             <img ng-show="vm.content.action == 'add' || !formUserProfile.files.$error.required" src="data:image/jpeg;base64,{{vm.data_filter[0].files.base64}}" style="width:10%">
+             <img ng-show="vm.content.action == 'update' && formUserProfile.files.$error.required" src="{{vm.data_filter[0].image_url}}" style="width:10%">
+        </div>
+
+       
+
+        
+
+
+
+
+        <div class="top-margin-sm pull-right" align="center">
+            <button type="button" 
+                    class="btn btn-sm btn-cancel" 
+                    ng-click="vm.cancel()" > Cancel </button>
+            <button type="button"
+                    class="btn btn-sm btn-primary text-capitalize"
+                    ng-click="vm.submitted=true;vm.approve()" > {{vm.content.btn_name || vm.content.action | titleCase}} </button>
+        </div>
+
+        
+    </form>
+</div>

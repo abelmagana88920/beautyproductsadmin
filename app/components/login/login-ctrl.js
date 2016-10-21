@@ -22,7 +22,7 @@
         vm.forgot = forgot;
 
         function login (user) {
-            $state.go('app.customer');
+            $state.go('app.users');
         }
 
         function forgot () {

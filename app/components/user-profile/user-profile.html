@@ -1,0 +1,101 @@
+<div class=""> <!-- col-md-12-->
+    
+   <!-- Hello World!
+
+<div class="shufra-blue-primary">
+    <p class="text-white">Hello World!</p>
+</div>
+    <button class="btn btn-primary"
+    		ng-click="vm.message_modal()">
+    	Modal {{orderProperty}}
+    </button> -->
+    <!--
+    <div class="alert alert-info">
+                    <p>Sort key: {{vm.sortKey}}</p>
+                    <p>Reverse: {{vm.reverse}}</p>
+                    <p>Search String : {{search}}</p>
+    </div>   -->
+
+   
+ 
+
+   
+    <div class="table-responsive">
+
+        <div sticky offset="50" class="sticky" style="background-color:white">
+            <table style="width:100%">
+                 <tr>
+                    <td style="width:70%"><h5 class="title-header">{{vm.titleHeader}}</h5></td>
+                     
+                    <td style="width:30%" valign=middle align=right>
+                         <div style="width: 70px"> 
+                                <div ng-click="vm.updateUserProfileModal(vm.data_final[0].id)" style="float:left"><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></div> 
+                                <a ng-click="vm.removeUserProfileModal()"><i class="fa fa-2x fa-trash" aria-hidden="true"></i></a>
+                         </div>  
+                     </td> 
+
+               </tr>  
+            </table>
+            
+            <div style="margin-bottom:5px; box-shadow: 0 0 2px 1px #aaa;">
+                 <img src="{{vm.data_final[0].image_url}}"  style="width:14%;">
+            </div>
+            <div class="ft16"> 
+                 <b>{{vm.data_final[0].firstname}} {{vm.data_final[0].lastname}}</b> 
+            </div>
+
+            <div ng-init="tab = 1" class="Row tab menu">
+                 <div style="white-space: nowrap" nowrap class="Column" ng-class="{active:tab===1}">
+                       <a href=""  ng-click="tab = 1">   
+                           Profile</a>
+                  </div>
+                 
+           </div>
+            
+        </div>
+ 
+ 
+    <div style="margin-top: 25px">
+           <div ng-show="tab === 1"> 
+                  <table style="line-height:32px">
+                     <tr>
+                          <td style="width:150px"><b class="text-uppercase">Email Address</b></td>
+                          <td ng-bind="vm.data_final[0].email"></td>
+                      </tr>
+                    
+                      <tr>
+                          <td><b class="text-uppercase">Password</b></td>
+                          <td>**********</td>
+                      </tr>
+                      <tr>
+                          <td><b class="text-uppercase">Gender</b></td>
+                          <td ng-bind="vm.data_final[0].gender | titleCase"></td>
+                      </tr>
+                        <tr>
+                          <td style="width:150px"><b class="text-uppercase">Resident Address</b></td>
+                          <td ng-bind="vm.data_final[0].address"></td>
+                      </tr>
+              
+                      <tr>
+                          <td valign=top><b class="text-uppercase">Phone</b></td>
+                          <td>{{vm.data_final[0].phone_1}}<br> {{vm.data_final[0].phone_2}} </td>
+                      </tr>
+
+                       <tr>
+                          <td valign=top><b class="text-uppercase">Is Active</b></td>
+                          <td>{{vm.data_final[0].is_active}}</td>
+                      </tr>
+
+                      <tr>
+                          <td valign=top><b class="text-uppercase">Role</b></td>
+                          <td>{{vm.data_final[0].role | titleCase}}</td>
+                      </tr>
+                  </table>
+           </div>
+
+     </div>
+ 
+
+       
+    </div>
+</div>
