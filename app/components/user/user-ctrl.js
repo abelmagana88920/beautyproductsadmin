@@ -5,9 +5,9 @@
         .module('app')
         .controller('UserCtrl', UserCtrl);
 
-    UserCtrl.$inject = ['$scope', '$state','ModalService', 'QueryService','logger','$uibModalStack','$location'];
+    UserCtrl.$inject = ['$scope', '$state','ModalService', 'QueryService','logger','$uibModalStack','$location','DataService'];
 
-    function UserCtrl($scope, $state, ModalService, QueryService,logger, $uibModalStack,$location) {
+    function UserCtrl($scope, $state, ModalService, QueryService,logger, $uibModalStack,$location,DataService) {
         var vm = this;
         
         vm.titleHeader = 'Beautician Users';
@@ -44,6 +44,8 @@
         }
         
         function activateBlock($index, is_active) {
+
+             DataService.put('1');
              var active_block = '';
             
              vm.isActiveItem[$index] = !vm.isActiveItem[$index];
@@ -73,6 +75,7 @@
                 action:'add',
                 message:''
             }
+
             ModalService.user_profile_modal(content);
         }
 
@@ -99,7 +102,8 @@
         function removeUserProfileModal() {
             var content =  {
                 header:'Remove User',
-                message:'Are you sure you want to remove this user?'
+                message:'Are you sure you want to remove this user?',
+                action: 'delete'
             }
             ModalService.confirm_modal(content);
         }

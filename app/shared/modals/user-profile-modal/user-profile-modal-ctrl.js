@@ -6,9 +6,9 @@
         .controller('UserProfileModalCtrl', UserProfileModalCtrl);
 
     UserProfileModalCtrl.$inject = ['$scope', '$cookies', '$uibModalInstance',
-                                     '$timeout', 'message', 'QueryService', '$filter'];
+                                     '$timeout', 'message', 'QueryService', '$filter','DataService'];
     function UserProfileModalCtrl ($scope, $cookies, $uibModalInstance, 
-                                    $timeout, message, QueryService,$filter) {
+                                    $timeout, message, QueryService,$filter,DataService) {
         var vm     = this,
             ids    = message.keys;
         vm.content = message; 
@@ -21,7 +21,13 @@
 
 
         function approve () {
-
+            console.log($scope.formUserProfile.$valid);
+            if ($scope.formUserProfile.$valid) {
+                if (vm.content.action == 'add')
+                    DataService.post('1');
+                else if (vm.content.action == 'update')
+                    DataService.put('1');
+            } 
         }
 
         function cancel () {

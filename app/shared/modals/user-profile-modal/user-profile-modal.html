@@ -10,7 +10,7 @@
 
 </div>
  
-
+ 
 <div class="modal-body clearfix" >
     <form name="formUserProfile" novalidate>
         <div class="col-md-12 modal-padding" >
@@ -130,7 +130,7 @@
                     type="file"
                     name="files"
                     ng-model="vm.data_filter[0].files" 
-                    required=""
+                     
                     placeholder="Image"
                     base-sixty-four-input
                     accept="image/*"
@@ -156,7 +156,7 @@
                     ng-click="vm.cancel()" > Cancel </button>
             <button type="button"
                     class="btn btn-sm btn-primary text-capitalize"
-                    ng-click="vm.submitted=true;vm.approve()" > {{vm.content.btn_name || vm.content.action | titleCase}} </button>
+                    ng-click="vm.submitted=true; vm.approve()" > {{vm.content.btn_name || vm.content.action | titleCase}} </button>
         </div>
 
         
