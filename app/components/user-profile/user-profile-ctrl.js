@@ -59,7 +59,8 @@
          function removeUserProfileModal() {
             var content =  {
                 header:'Remove User',
-                message:'Are you sure you want to remove this user?'
+                message:'Are you sure you want to remove this user?',
+                action: 'delete'
             }
             ModalService.confirm_modal(content);
         }
@@ -86,7 +87,8 @@
         function message_modal () {
             var content =  {
                 header:'Message',
-                message:'Hello World!'
+                message:'Hello World!',
+
             }
             ModalService.confirm_modal(content);
         }
@@ -95,6 +97,7 @@
             var content =  {
                 header:'Remove Customer',
                 message:'Are you sure you want to remove this customer?'
+
             }
             ModalService.remove_customer_modal(content);
         }

@@ -20,10 +20,13 @@
                     name="firstname"
                     ng-model="vm.data_filter[0].firstname" 
                     required=""
+                    ng-minlength="2"
                     placeholder="First Name"
 
                      >
             <span class="ft9 error" ng-show="vm.submitted && formUserProfile.firstname.$error.required">(Required!)</span>  
+            <span class="error ft9" ng-show="formUserProfile.firstname.$touched && formUserProfile.firstname.$invalid">
+                        (Not valid value!)</span>
         </div>
          
         <div class="col-md-12 modal-padding" >
@@ -33,21 +36,28 @@
                     name="lastname"
                     ng-model="vm.data_filter[0].lastname" 
                     required=""
+                    ng-minlength="2"
                     placeholder="Last Name"
                      >
             <span class="ft9 error" ng-show="vm.submitted && formUserProfile.lastname.$error.required">(Required!)</span>  
+            <span class="error ft9" ng-show="formUserProfile.lastname.$touched && formUserProfile.lastname.$invalid">
+                        (Not valid value!)</span>
         </div>
 
         <div class="col-md-12 modal-padding" >
             <span ng-show="!formUserProfile.email.$error.required">Email</span>
             <input  class="form-control" 
-                    type="text"
+                    type="email"
                     name="email"
                     ng-model="vm.data_filter[0].email" 
                     required=""
                     placeholder="Email"
+                    ng-minlength="7"
+                    ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" 
                      >
             <span class="ft9 error" ng-show="vm.submitted && formUserProfile.email.$error.required">(Required!)</span>  
+             <span class="error ft9" ng-show="formUserProfile.email.$touched && formUserProfile.email.$invalid">
+                        (Not valid value!)</span>
         </div>
 
          <div class="col-md-12 modal-padding" >
@@ -93,10 +103,14 @@
                     type="text"
                     name="phone_1"
                     ng-model="vm.data_filter[0].phone_1" 
+                    ng-pattern="/^[0-9]+$/"
+                    ng-minlength="4"
                     required=""
                     placeholder="Phone 1"
                      >
              <span class="ft9 error" ng-show="vm.submitted && formUserProfile.phone_1.$error.required">(Required!)</span>  
+             <span class="error ft9" ng-show="formUserProfile.phone_1.$touched && formUserProfile.phone_1.$invalid">
+                        (Not valid value!)</span>
         </div>
 
          <div class="col-md-12 modal-padding" >
@@ -105,8 +119,13 @@
                     type="text"
                     name="phone_2"
                     ng-model="vm.data_filter[0].phone_2" 
+                    ng-pattern="/^[0-9]+$/"
+                    ng-minlength="4"
                     placeholder="Phone 2"
                      >
+            <span class="error ft9" ng-show="formUserProfile.phone_2.$touched && formUserProfile.phone_2.$invalid">
+                        (Not valid value!)</span>
+
         </div>
 
         <div class="col-md-12 modal-padding" >

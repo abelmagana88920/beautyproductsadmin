@@ -20,8 +20,10 @@
         vm.data_filter = [];
 
 
+
+
         function approve () {
-            console.log($scope.formUserProfile.$valid);
+             
             if ($scope.formUserProfile.$valid) {
                 if (vm.content.action == 'add')
                     DataService.post('1');
@@ -53,6 +55,8 @@
            .then(function(response) { 
                   var id = parseInt(vm.content.id);
                   vm.data_filter = $filter('filter')(vm.data, {'id':id},true);  //filter
+
+
                  
            })
         })();
